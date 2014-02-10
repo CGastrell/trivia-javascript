@@ -1,0 +1,30 @@
+{
+  "name": "triviaJS",
+  "version": "0.0.0",
+  "description": "Trivia hecha en javascript",
+  "main": "index.html",
+  "dependencies": {
+    "grunt": "~0.4.2"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CGastrell/trivia-javascript"
+  },
+  "keywords": [
+    "trivia",
+    "javascript",
+    "juego"
+  ],
+  "author": "Christian Gastrell",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/CGastrell/trivia-javascript/issues"
+  },
+  "homepage": "https://github.com/CGastrell/trivia-javascript"
+}
