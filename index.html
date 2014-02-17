@@ -28,9 +28,49 @@
         height:100%;
       }
       div {
-        transition: all 0.5s ease;
+        /*transition: all 0.5s ease;*/
       }
       span {
+      }
+      #gameSpace {
+          width: 100%;
+          position: relative;
+          height: 100%;
+          background: red
+      }
+      #startSplash, #endSplash {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        border: 2px solid blue;
+        top: 25%;
+        left: 25%;
+      }
+      #questionLabel {
+        position: absolute;
+        font-size: 20px;
+        width: 100px;
+        height: 100px;
+        border: 2px solid blue;
+        top: 60px;
+        left: 50%;
+        pointer-events: none;
+        background-color: violet;
+      }
+      #questionBox {
+        width: 100%;
+        position: absolute;
+        background-color: blue;
+        font-size: 50px;
+        top: 125px;
+      }
+      #optionsContainer {
+        width: 100%;
+        position: absolute;
+        background-color: green;
+      }
+      #responseSplash {
+        position: absolute;
       }
     </style>
   </head>
@@ -39,6 +79,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="lib/jquery-1.11.0.min.js"></script>
     <script src="lib/jquery.ui.widget.min.js"></script>
+    <script src="lib/TweenMax-1.11.4.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed
     <script src="lib/bootstrap.min.js"></script>
     -->
@@ -46,7 +87,7 @@
     <script src="src/triviaJS.js"></script>
     <script>
     $(document).ready(function(){
-      $('body').trivia({hiScore:321,questionsUrl:'triviafile2.json'});
+      $('body').trivia({hiScore:321,questionsUrl:'triviafile.json'});
     })
     </script>
   </body>

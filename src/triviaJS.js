@@ -5,6 +5,7 @@
 		options: {
 			questions: [],
 			hiScore: "0000",
+			questionsPerRound: 10,
 			labels: {
 				hiScore: "TOP: ",
 				title: "GeoTrivia",
@@ -34,7 +35,8 @@
 				})
 			).done(
 				this._buildStatusBar(),
-				this._buildGameSpace()
+				this._buildGameSpace(),
+				this._showStartSplash()
 			).fail(function(){
 				_this._showError('could not load questions')
 			});
@@ -48,61 +50,81 @@
 			}).promise();
 			return d.done(callback);
 		},
+		startGame: function() {
+			this.selectedQuestions = [];
+			this.currentQuestion = null;
+			var _this  = this;
+			var q = this.options.questions.slice();
+			var r;
+			for (var ii = 0; ii < this.options.questionsPerRound; ii++) {
+				r = Math.random() * q.length << 0;
+				this.selectedQuestions.push(q.splice(r,1)[0]);
+			}
+			TweenMax.to(this.startSplash,0.5,{
+				autoAlpha:0,
+				scale:0.1,
+				ease: Back.easeIn,
+				onComplete: $.proxy(this._showQuestion,_this)
+			})
+		},
+		_showQuestion: function() {
+			var _this = this;
+			var rr = Math.random() * this.selectedQuestions.length << 0;
+			this.currentQuestion = this.selectedQuestions.splice(rr, 1)[0];
+			// this._center(null, this.questionLabel, true);
+			TweenMax.set(this.questionLabel, {autoAlpha: 1});
+			this.questionLabel.text("#" + String(_this.options.questionsPerRound - _this.selectedQuestions.length));
+			this.questionBox.text(this.currentQuestion.consigna);
+			var tl = new TimelineMax({onComplete:function(){console.log('question shown');}});
+			tl.add(TweenMax.from(this.questionLabel,0.5,{delay: 0.25, autoAlpha: 0, scale:3, ease: Back.easeOut}));
+			tl.add(TweenMax.to(this.questionBox,0.5,{autoAlpha:1}));
+			tl.add(TweenMax.to)
+			
+		},
+		_showStartSplash: function() {
+			TweenMax.staggerTo([
+				this.endSplash,
+				this.optionsContainer,
+				this.responseSplash,
+			],0.5,{autoAlpha:0})
+			TweenMax.to(this.startSplash,0.5,{autoAlpha:1});
+		},
 		_zOrder: function(boxesArray) {
 			for(var ii=0; ii < boxesArray.length; ii++) {
 				boxesArray[ii].css('z-index',ii + 20);
 			}
 		},
 		_buildGameSpace: function() {
-
+			var _this = this;
 			this.gameSpace = $('<div id="gameSpace" />')
-				.css({
-					width: '100%',
-					position: 'relative',
-					height: this.height - this.statusBar.height(),
-					background: "red"
-				}).appendTo(this.element);
+				.css('height', this.height - this.statusBar.height())
+				.appendTo(this.element);
 
 			this.questionBox = $('<div id="questionBox" />')
-				.css({
-					width: '100%',
-					background: 'blue',
-					position: 'absolute'
-				})
-				.hide().appendTo(this.gameSpace);
-			this.questionLabel = $('<div id="questionLabel" />')
-				.css({
-					position: 'absolute',
-					background: 'violet'
-				})
-				.hide().appendTo(this.gameSpace);
+				.appendTo(this.gameSpace);
 
+			this.questionLabel = $('<div id="questionLabel" />')
+				.appendTo(this.gameSpace);
 
 			this.optionsContainer = $('<div id="optionsContainer" />')
-				.css({
-					width: '100%',
-					position: 'absolute',
-					background: 'green'
-				})
-				.hide().appendTo(this.gameSpace);
+				.appendTo(this.gameSpace);
+			this.optionsContainer.append($('<div class="response" data-index="0" />'));
+			this.optionsContainer.append($('<div class="response" data-index="1" />'));
+			this.optionsContainer.append($('<div class="response" data-index="2" />'));
 
 			this.responseSplash = $('<div id="responseSplash" />')
-				.css({
-					position: 'absolute'
-				})
-				.hide().appendTo(this.gameSpace);
+				.appendTo(this.gameSpace);
 
 			this.startSplash = $('<div id="startSplash" />')
-				.css({
-					position: 'absolute'
-				})
-				.hide().appendTo(this.element);
+				.html("<h1>Trivia IGN</h1>")
+				.appendTo(this.element);
+			this.startButton = $('<a href="#">Comenzar</a>')
+				.click(function(e){
+					_this.startGame();
+					return false;
+				}).appendTo(this.startSplash);
 
-			this.endSplash = $('<div id="endSplash" />')
-				.css({
-					position: 'absolute'
-				})
-				.hide().appendTo(this.element);
+			this.endSplash = $('<div id="endSplash" />').appendTo(this.element);
 
 			this.errorSplash = $('<div id="errorSplash" />')
 				.css({
@@ -115,23 +137,36 @@
 					'font-size': '20px',
 					color: 'white'
 				})
-				.hide().appendTo(this.element).append($('<h1>ERROR!</h1>'));
+				.appendTo(this.element).append($('<h1>ERROR!</h1>'));
 			this.errorSplash.message = $('<p />').appendTo(this.errorSplash);
 
 			this._center(this.element,this.errorSplash);
+			this._center(null, this.questionLabel, true);
+
+			TweenMax.set([
+				this.endSplash,
+				this.startSplash,
+				this.questionLabel,
+				this.questionBox,
+				this.optionsContainer,
+				this.responseSplash,
+				this.errorSplash
+			],{autoAlpha:0});
 		},
 		_showError: function(msg) {
 			console.log('error: ' + msg);
-			this.errorSplash.message.text(msg)
-			this.errorSplash.show();
+			this.errorSplash.message.text(msg);
+			TweenMax.set(this.errorSplash, {autoAlpha:1});
 		},
-		_center: function(container, client) {
-			client.offset({
-				top: (container.innerHeight() - client.outerHeight()) / 2,
+		_center: function(container, client, horizontalOnly) {
+			if(container === null || container === undefined) container = client.parent();
+			var n = {
+				top: horizontalOnly ? client.offset().top : (container.innerHeight() - client.outerHeight()) / 2,
 				left: (container.innerWidth() - client.outerWidth()) /2
-			});
-			// console.log(client.offset());
+			}
+			client.offset(n);
 		},
+		center: this._center,
 		_buildStatusBar: function() {
 			// console.log(this.options);
 			this.statusBar = $('<div id="statusBar" />')
