@@ -1,6 +1,7 @@
 {
     "preguntas":[
         {
+            "id": "1",
             "consigna":"¿Cuál es la cota (altura) del cerro Aconcagua, ubicado en la provincia de Mendoza?",
             "respuesta":"6961 metros",
             "remate":"En el año 2012 el Instituto Geográfico Nacional determinó que la cota oficial del cerro Aconcagua es de 6960,8",
@@ -11,6 +12,7 @@
             ]
         },
         {
+            "id": "2",
             "consigna":"¿Cuál es el lago con mayor superficie en nuestro país?",
             "respuesta":"Argentino",
             "remate":"El Lago Argentino tiene una superficie de 1415 Km² y esta íntegramente en el territorio argentino, ubicado en la provincia de Santa Cruz.",
@@ -21,6 +23,7 @@
             ]
         },
         {
+            "id": "3",
             "consigna":"¿Dónde se encuentra el punto más bajo respecto al nivel del mar de la República Argentina?",
             "respuesta":"Gran Bajo de San Julián",
             "remate":"El Gran Bajo de San Julián es una cuenca endorreica situada en la provincia de Santa Cruz. Con 105 metros bajo el nivel del mar, es la mayor depresión de la Argentina según datos del Instituto Geográfico Nacional.",
@@ -31,6 +34,7 @@
             ]
         },
         {
+            "id": "4",
             "consigna":"¿Cuál es la provincia con menor superficie de la República Argentina?",
             "respuesta":"Tucumán",
             "remate":"La provincia con menor superficie es Tucumán. Situada en el noroeste argentino cuenta con  22.524 Km². Limita al norte con la provincia de Salta, al este y sur con Santiago del Estero y al oeste y sur con Catamarca.",
@@ -41,6 +45,7 @@
             ]
         },
         {
+            "id": "5",
             "consigna":"¿En cuál provincia se encuentran las termas de Río Hondo?",
             "respuesta":"Santiago del Estero",
             "remate":"Las Termas de Río Hondo se encuentran en la Provincia de Santiago del Estero. Es cabecera del departamento Río Hondo, a orillas del Río Dulce. Es el principal centro termal del país y de América del Sur, ya que la misma se encuentra sobre una gran terma mineralizada que cubre 12 Km²",
@@ -51,6 +56,7 @@
             ]
         },
         {
+            "id": "6",
             "consigna":"¿Cuántos saltos forman las Cataratas del Iguazú?",
             "respuesta":"275",
             "remate":"275 saltos. Se localizan sobre el río Iguazú, en el límite entre la provincia de Misiones y el estado brasileño de Paraná. El 80% de los saltos se encuentran en territorio argentino.",
@@ -61,6 +67,7 @@
             ]
         },
         {
+            "id": "7",
             "consigna":"¿Qué profundidad alcanza el lago Nahuel Huapi?",
             "respuesta":"464 metros",
             "remate":"Alcanza una profundidad máxima de 464 metros. Es compartido por las provincias del Neuquén y de Río Negro. Posee una superficie de 557 Km² y se sitúa a una altitud de unos 700 msnm.",
@@ -71,6 +78,7 @@
             ]
         },
         {
+            "id": "8",
             "consigna":"¿Cuál es la provincia con mayor población de nuestro país?",
             "respuesta":"Buenos Aires",
             "remate":"Buenos Aires registra mayor cantidad de habitantes según el Censo Nacional de Población, Hogares y Viviendas, realizado por el INDEC en el año 2010.",
@@ -81,6 +89,7 @@
             ]
         },
         {
+            "id": "9",
             "consigna":"¿Cuál es la provincia con mayor superficie de la República Argentina?",
             "respuesta":"Tierra del Fuego, Antártida e Islas del Atlántico Sur",
             "remate":"Tierra del Fuego, Antártida e Islas del Atlántico Sur. Con 1.002.445 km²  es la provincia con mayor superficie de la República Argentina.",
@@ -91,6 +100,7 @@
             ]
         },
         {
+            "id": "10",
             "consigna":"¿Cuántas provincias tiene la República Argentina?",
             "respuesta":"23",
             "remate":"La República Argentina tiene 23 provincias y 1 distrito federal que es la Ciudad Autónoma de Buenos Aires, capital del país.",
@@ -101,6 +111,7 @@
             ]
         },
         {
+            "id": "11",
             "consigna":"¿Cuál es la localidad ubicada a mayor altura sobre el nivel del mar de la República Argentina?",
             "respuesta":"Olacapato (Salta)",
             "remate":"Olacapato se encuentra 4.090 msnm y es una pequeña localidad de la provincia de Salta, dentro del Departamento Los Andes",
@@ -111,6 +122,7 @@
             ]
         },
         {
+            "id": "12",
             "consigna":"¿Cuál es el punto emergido más austral con soberanía plena de la Argentina?",
             "respuesta":"Cabo San Pío",
             "remate":"El Cabo San Pío es definido por el Instituto Geográfico Nacional, como el punto más austral del territorio con soberanía no disputada de la Argentina. Ubicado en la isla Grande de Tierra del Fuego, dentro de la provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur (Latitud 55º 03' S; Longitud 66º 31' O)",
@@ -121,6 +133,7 @@
             ]
         },
         {
+            "id": "13",
             "consigna":"¿En qué provincia está ubicado el Parque Nacional Los Alerces?",
             "respuesta":"Chubut",
             "remate":"El parque nacional Los Alerces se encuentra en la Provincia del Chubut. Fue creado en el año 1937 y posee una superficie de 259 570 ha. El fundamento de su creación es la protección de los bosques de lahuán o alerce, uno de los árboles de mayor longevidad del planeta, que llegó a estar en peligro de extinción.",
@@ -131,6 +144,7 @@
             ]
         },
         {
+            "id": "14",
             "consigna":"¿Cuál es la ruta nacional más extensa dentro del territorio nacional?",
             "respuesta":"Ruta Nº 40",
             "remate":"La Ruta Nacional Nº 40 se extiende desde Cabo Vírgenes (Santa Cruz) hasta el límite con Bolivia en la ciudad de La Quiaca (Jujuy). La ruta recorre 5301 Km. comienza a nivel del mar, atraviesa 21 parques nacionales, 18 importantes ríos, conecta 27 pasos cordilleranos y trepa (en el Km 4601) a más de 5000 msnm en el Abra del Acay en Salta.",
@@ -141,6 +155,7 @@
             ]
         },
         {
+            "id": "15",
             "consigna":"¿En qué provincia están ubicados los Esteros del Iberá?",
             "respuesta":"Corrientes",
             "remate":"Los Esteros del Iberá se encuentran en la provincia de Corrientes. Es una amplia red que abarca entre 15 000 y 25 000 Km². El centro aproximado de este sistema se ubica en las coordenadas 28°36′00″S 57°49′0″O.Gracias a su peculiar geografía y al difícil acceso, la zona cuenta con una variada flora y fauna.",
@@ -151,6 +166,7 @@
             ]
         },
         {
+            "id": "16",
             "consigna":"¿Cuál es la superficie total de la República Argentina?",
             "respuesta":"3.761.274 km²",
             "remate":"La Superficie Total de la República Argentina es 3.761.274 km², de los cuales: 2.791.810 km² corresponden al Continente Americano y 969.464 km² al Continente Antártico (incluyendo las islas Orcadas del Sur) y a las islas australes (Georgias del Sur y Sandwich del Sur).",
@@ -161,6 +177,7 @@
             ]
         },
         {
+            "id": "17",
             "consigna":"¿En qué provincia está ubicado el Valle de la Luna?",
             "respuesta":"San Juan",
             "remate":"El Parque provincial Valle de la Luna, se encuentra en el extremo norte de la provincia de San Juan, en el Departamento Valle Fértil. Es un área protegida de 275 369 ha, célebre a nivel científico, ya que resguarda una importante reserva paleontológica. Es el único lugar donde puede verse totalmente al descubierto y perfectamente diferenciado todo el periodo triásico en forma completa y ordenada. Se calcula que las formaciones geológicas de este sitio tienen una antigüedad entre 180 y 230 millones de años.",
@@ -171,6 +188,7 @@
             ]
         },
         {
+            "id": "18",
             "consigna":"¿Cuáles son los nombres de las mayores islas que forman el archipiélago malvinero?",
             "respuesta":"Gran Malvina y Soledad",
             "remate":"Los nombres de las Islas son Gran Malvina (4377Km²) y Soledad (6353 Km²) separadas por el estrecho de San Carlos, ubicadas en el Mar Argentino.",
@@ -181,6 +199,7 @@
             ]
         },
         {
+            "id": "19",
             "consigna":"¿Cuantas son las provincias cuyas capitales llevan sus mismos nombres?",
             "respuesta":"11",
             "remate":"Son 11 (once) las provincias cuyas capitales llevan sus mismos nombres: Córdoba, Corrientes, Formosa, La Rioja, Mendoza, Neuquén, Salta, San Juan, San Luis, Santa Fe y Santiago del Estero.",
@@ -191,6 +210,7 @@
             ]
         },
         {
+            "id": "20",
             "consigna":"¿Cuántos Parques Nacionales existen en la República Argentina?",
             "respuesta":"34",
             "remate":"La República Argentina cuenta con un sistema de 34 parques nacionales destinado a proteger el patrimonio natural y cultural del país.",
@@ -198,96 +218,6 @@
                 "29",
                 "34",
                 "12"
-            ]
-        },
-        {
-            "consigna":"",
-            "respuesta":"",
-            "remate":"",
-            "opciones":[
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "consigna":"",
-            "respuesta":"",
-            "remate":"",
-            "opciones":[
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "consigna":"",
-            "respuesta":"",
-            "remate":"",
-            "opciones":[
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "consigna":"",
-            "respuesta":"",
-            "remate":"",
-            "opciones":[
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "consigna":"",
-            "respuesta":"",
-            "remate":"",
-            "opciones":[
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "consigna":"",
-            "respuesta":"",
-            "remate":"",
-            "opciones":[
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "consigna":"",
-            "respuesta":"",
-            "remate":"",
-            "opciones":[
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "consigna":"",
-            "respuesta":"",
-            "remate":"",
-            "opciones":[
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "consigna":"",
-            "respuesta":"",
-            "remate":"",
-            "opciones":[
-                "",
-                "",
-                ""
             ]
         }
     ]

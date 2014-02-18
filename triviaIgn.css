@@ -1,0 +1,257 @@
+html, body, div {
+  border:0;
+  padding:0;
+  margin:0;
+}
+html,body {
+  height:100%;
+}
+div, p {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+#gameSpace {
+  /*
+  background: url(images/fondos/1.jpg) 0 0 no-repeat;
+  background-attachment: fixed;
+  background-size: 100% ;
+  */
+  background: black;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+#gameSpace #background {
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+#startSplash, #endSplash {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border: 2px solid blue;
+  top: 25%;
+  left: 25%;
+}
+#questionLabel {
+  height: 7.2vw;
+  pointer-events: none;
+}
+
+#questionLabel .centro {
+  background-image:url(images/ribete.png);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 14vw;
+  height: 7.2vw;
+  left: 43%;
+  position: absolute;
+}
+
+#questionLabel .izq {
+  background-image: url(images/ribetei.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 7.2vw;
+  height: 7.2vw;
+  margin-bottom: 1%;
+  left: 0;
+  position: absolute; 
+}
+
+#questionLabel .der{
+  background-image:url(images/ribeted.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 7.2vw;
+  height: 7.2vw;
+  right: 0;
+  position: absolute;
+}
+#questionLabel .numcontainer{
+  background: url(images/estampa.png) 0 0 no-repeat;
+  background-size: 100%;
+  position: absolute;
+  left: 45%;
+  top: 2vw;
+  width: 10%;
+  /*height: 23%;*/
+  color: rgba(145, 42, 136, 1);
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  font-size: 4vw;
+  text-rendering: optimizelegibility;
+  line-height: 10vw;
+  text-align: center;
+}
+
+#questionBox {
+  /*width: 100%;*/
+  position: absolute;
+  /*background-color: blue;*/
+  top: 125px;
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  color: rgb(231, 247, 255);
+  /*background: #d8d8d8;
+  background: rgba(100, 0, 72, 0.52);
+  box-shadow: 12px 0 0 0 rgba(100, 0, 72, 0.52),-12px 0 0 0 rgba(100, 0, 72, 0.52);*/
+  padding: 10px;
+  line-height: 4vw;
+  text-transform: none;
+  text-shadow:0 5px 5px rgba(0,0,0,0.4);
+  text-align: center;
+  margin-top: 2vw;
+
+  border:1px solid rgba(0,0,0,0.3);
+  box-shadow:0 5px 5px rgba(0,0,0,0.4), inset 0 12px 10px -4.5px rgba(0,0,0,0.2);
+  background-color: rgba(145, 42, 136, 0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-left: none;
+  border-right: none;
+  padding: 2%;
+  pointer-events: none;
+}
+#questionBox > #consigna {
+  font-size: 4vw;
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  color: rgb(231, 247, 255);
+  /*background: #d8d8d8;
+  background: rgba(100, 0, 72, 0.52);
+  box-shadow: 12px 0 0 0 rgba(100, 0, 72, 0.52),-12px 0 0 0 rgba(100, 0, 72, 0.52);*/
+  padding: 10px;
+  line-height: 4.5vw;
+  text-transform: none;
+  text-shadow:0 5px 5px rgba(0,0,0,0.4);
+  text-align: center;
+  margin: 1vw 0 0 0;
+}
+
+.cta {
+  height: 7.2vw;
+  min-width:10vw;
+  max-width: 40vw;
+  /*position: absolute;*/
+  margin-left: auto;
+  margin-right:auto;
+  pointer-events: none;
+}
+
+.cta .centro {
+  background:whitesmoke;
+  height: 7.2vw;
+  margin-left: 7.1vw;
+  margin-right: 7.2vw;
+  text-align: center;
+  border-top: 1 solid white;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2) inset;
+  border-radius: 5px;
+  min-width: 10vw;
+  max-width: 30vw;
+}
+.cta .centro p {
+  color:rgba(145, 42, 136, 1);
+  padding: 2vw 0;
+  font-size:3vw;
+  line-height: 3.5vw;
+}
+
+.cta .izq {
+  background-image: url(images/ribeted.png);
+  background-position:0 3px;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 7.2vw;
+  height: 7.2vw;
+  float: left; 
+}
+
+.cta .der {
+  background-image:url(images/ribetei.png);
+  background-position:0 3px;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 7.2vw;
+  height: 7.2vw;
+  float: right;
+  margin-top:-7.2vw;
+}
+
+#responseSplash {
+  position: absolute;
+  width: 50%;
+  height: 50%;  
+}
+.respuesta {
+  position: absolute;
+  top: 67%;
+  width: 25%;
+  /*height: 22%;*/
+}
+
+.respuesta .opciones {
+  padding: 5%;
+  border:1px solid rgba(0,0,0,0.3);
+  box-shadow:0 5px 5px rgba(0,0,0,0.4), inset 0  12px 10px -4.5px rgba(0,0,0,0.5);
+  background-color: rgba(145, 42, 136, 0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+}
+
+.opciones > p {
+    font-size: 2vw;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    text-rendering: optimizelegibility;
+    color: white;
+    padding: 0 10px 10px;
+    line-height: 2.5vw;
+    text-transform: none;
+    text-shadow:0 7px 5px rgba(0,0,0,0.4);
+    margin: 0;
+}
+.opciones .boton {
+  background: url(images/boton.png) 0 0 no-repeat;
+  background-size: 100%;
+  /*position: absolute;
+  left: 45.5%;
+  top: 4%;*/
+  width: 8vw;
+  height: 8vw;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 1%;
+}
+
+#opcion1 {left: 6%;}
+#opcion2 {left: 37%;}
+#opcion3 {left: 68%;}
+
+
+#errorSplash {
+  border: 2px solid yellow;
+  position: absolute;
+  background: red;
+  width: 50%;
+  height: 50%;
+  text-align': center;
+  font-size': 20px;
+  color: white;
+
+}
