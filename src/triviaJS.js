@@ -4,15 +4,14 @@
 		height: 0,
 		options: {
 			questions: [],
-			hiScore: "0000",
-			questionsPerRound: 10,
+			record: "0000",
+			preguntasPorRonda: 10,
 			labels: {
 				hiScore: "TOP: ",
 				title: "GeoTrivia",
 				score: "PUNTOS: ",
-				questionsUrl: ""
-			},
-			questionsArrayName: 'questions'
+				preguntasUrl: ""
+			}
 		},
 		_create: function(){
 		},
@@ -20,45 +19,51 @@
 			this.element.css({
 				position: 'relative'
 			});
-			this.width = this.element.innerWidth();
-			this.height = this.element.innerHeight();
+			this.ancho = this.element.innerWidth();
+			this.alto = this.element.innerHeight();
 			var _this = this;
 			this.element.html("");
 			$.when(
-				this.loadQuestions(function(data){
-					// console.log(arguments);
-					if(data[_this.options.questionsArrayName] === undefined) {
-						_this._showError('could not find the questions array. questionsArrayName: '+_this.options.questionsArrayName);
-						return false;
+				this.cargarPreguntas(function(data){
+					console.log(data);
+					if(data["preguntas"] === undefined) {
+						_this._mostrarError('no se encontro el item "preguntas"');
+						return true;
 					}
-					_this.options.questions = data[_this.options.questionsArrayName];
+					_this.options.preguntas = data["preguntas"].slice();
 				})
 			).done(
-				this._buildStatusBar(),
-				this._buildGameSpace(),
-				this._showStartSplash()
+				this._crearBarraInfo(),
+				this._crearEspacioDeJuego(),
+				this._mostrarSplashInicial()
 			).fail(function(){
-				_this._showError('could not load questions')
+				if($.isEmptyObject(_this.options.preguntas)) {
+					_this._mostrarError('no se pudo cargar el archivo de preguntas');
+					return false;
+				}
+				if(_this.options.preguntas["preguntas"] === undefined) {
+					_this._mostrarError('no hay preguntas disponibles');
+				}
 			});
 
 		},
-		loadQuestions: function(callback) {
-			// if(this.options.questionsUrl === "")
+		cargarPreguntas: function(callback) {
+			// if(this.options.preguntasUrl === "")
 			var _this = this;
 			var d = $.Deferred(function(defer){
-				$.getJSON(_this.options.questionsUrl).then(defer.resolve, defer.reject);
+				$.getJSON(_this.options.preguntasUrl).then(defer.resolve, defer.reject);
 			}).promise();
 			return d.done(callback);
 		},
-		startGame: function() {
-			this.selectedQuestions = [];
-			this.currentQuestion = null;
+		comenzarJuego: function() {
+			this.setDePreguntas = [];
+			this.preguntaActual = null;
 			var _this  = this;
-			var q = this.options.questions.slice();
+			var q = this.options.preguntas.slice();
 			var r;
-			for (var ii = 0; ii < this.options.questionsPerRound; ii++) {
+			for (var ii = 0; ii < this.options.preguntasPorRonda; ii++) {
 				r = Math.random() * q.length << 0;
-				this.selectedQuestions.push(q.splice(r,1)[0]);
+				this.setDePreguntas.push(q.splice(r,1)[0]);
 			}
 			TweenMax.to(this.startSplash,0.5,{
 				autoAlpha:0,
@@ -69,22 +74,35 @@
 		},
 		_showQuestion: function() {
 			var _this = this;
-			var rr = Math.random() * this.selectedQuestions.length << 0;
-			this.currentQuestion = this.selectedQuestions.splice(rr, 1)[0];
+			var rr = Math.random() * this.setDePreguntas.length << 0;
+			this.preguntaActual = this.setDePreguntas.splice(rr, 1)[0];
 			// this._center(null, this.questionLabel, true);
 			TweenMax.set(this.questionLabel, {autoAlpha: 1});
-			this.questionLabel.text("#" + String(_this.options.questionsPerRound - _this.selectedQuestions.length));
-			this.questionBox.text(this.currentQuestion.consigna);
+			this.questionLabel.text("#" + String(_this.options.preguntasPorRonda - _this.setDePreguntas.length));
+			this.questionBox.text(this.preguntaActual.consigna);
 			var tl = new TimelineMax({onComplete:function(){console.log('question shown');}});
 			tl.add(TweenMax.from(this.questionLabel,0.5,{delay: 0.25, autoAlpha: 0, scale:3, ease: Back.easeOut}));
 			tl.add(TweenMax.to(this.questionBox,0.5,{autoAlpha:1}));
-			tl.add(TweenMax.to)
+			tl.add(
+				TweenMax.staggerTo(
+					[
+						this.respuesta1,
+						this.respuesta2,
+						this.respuesta3
+					],
+					{autoAlpha: 1},
+					0.2,
+					function() {console.log('respuestas mostradas')}
+				)
+			);
 			
 		},
-		_showStartSplash: function() {
+		_mostrarSplashInicial: function() {
 			TweenMax.staggerTo([
 				this.endSplash,
-				this.optionsContainer,
+				this.respuesta1,
+				this.respuesta2,
+				this.respuesta3,
 				this.responseSplash,
 			],0.5,{autoAlpha:0})
 			TweenMax.to(this.startSplash,0.5,{autoAlpha:1});
@@ -94,10 +112,10 @@
 				boxesArray[ii].css('z-index',ii + 20);
 			}
 		},
-		_buildGameSpace: function() {
+		_crearEspacioDeJuego: function() {
 			var _this = this;
 			this.gameSpace = $('<div id="gameSpace" />')
-				.css('height', this.height - this.statusBar.height())
+				.css('height', this.alto - this.statusBar.height())
 				.appendTo(this.element);
 
 			this.questionBox = $('<div id="questionBox" />')
@@ -106,11 +124,14 @@
 			this.questionLabel = $('<div id="questionLabel" />')
 				.appendTo(this.gameSpace);
 
-			this.optionsContainer = $('<div id="optionsContainer" />')
-				.appendTo(this.gameSpace);
-			this.optionsContainer.append($('<div class="response" data-index="0" />'));
-			this.optionsContainer.append($('<div class="response" data-index="1" />'));
-			this.optionsContainer.append($('<div class="response" data-index="2" />'));
+			// this.optionsContainer = $('<div id="optionsContainer" />')
+				// .appendTo(this.gameSpace);
+			this.respuesta1 = $('<div class="respuesta opcion1" data-index="0" />')
+				.text(".").appendTo(this.gameSpace);
+			this.respuesta2 = $('<div class="respuesta opcion2" data-index="1" />')
+				.text(".").appendTo(this.gameSpace);
+			this.respuesta3 = $('<div class="respuesta opcion3" data-index="2" />')
+				.text(".").appendTo(this.gameSpace);
 
 			this.responseSplash = $('<div id="responseSplash" />')
 				.appendTo(this.gameSpace);
@@ -120,7 +141,7 @@
 				.appendTo(this.element);
 			this.startButton = $('<a href="#">Comenzar</a>')
 				.click(function(e){
-					_this.startGame();
+					_this.comenzarJuego();
 					return false;
 				}).appendTo(this.startSplash);
 
@@ -148,12 +169,14 @@
 				this.startSplash,
 				this.questionLabel,
 				this.questionBox,
-				this.optionsContainer,
+				this.respuesta1,
+				this.respuesta2,
+				this.respuesta3,
 				this.responseSplash,
 				this.errorSplash
 			],{autoAlpha:0});
 		},
-		_showError: function(msg) {
+		_mostrarError: function(msg) {
 			console.log('error: ' + msg);
 			this.errorSplash.message.text(msg);
 			TweenMax.set(this.errorSplash, {autoAlpha:1});
@@ -167,7 +190,7 @@
 			client.offset(n);
 		},
 		center: this._center,
-		_buildStatusBar: function() {
+		_crearBarraInfo: function() {
 			// console.log(this.options);
 			this.statusBar = $('<div id="statusBar" />')
 				.css({
@@ -185,7 +208,7 @@
 				})
 				.appendTo(this.statusBar);
 			this.hiScoreValue = $('<span class="hiScore" />')
-				.text(this.options.hiScore)
+				.text(this.options.record)
 				.css("color","yellow")
 				.appendTo(this.hiScoreLabel);
 

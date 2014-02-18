@@ -72,6 +72,16 @@
       #responseSplash {
         position: absolute;
       }
+      .respuesta {
+        position: absolute;
+        top: 70%;
+        border: 2px solid black;
+        width: 25%;
+        height: 22%;
+      }
+      .opcion1 {left: 6%;}
+      .opcion2 {left: 37%;}
+      .opcion3 {left: 68%;}
     </style>
   </head>
   <body style="">
@@ -87,7 +97,7 @@
     <script src="src/triviaJS.js"></script>
     <script>
     $(document).ready(function(){
-      $('body').trivia({hiScore:321,questionsUrl:'triviafile.json'});
+      $('body').trivia({record:321,preguntasUrl:'triviafile.json'});
     })
     </script>
   </body>
