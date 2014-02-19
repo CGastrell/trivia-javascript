@@ -6,6 +6,7 @@
 
 		<title>Juego Feria del Libro</title>
 		<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Rye&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="triviaIgn.css">
 	</head>
 
@@ -49,19 +50,36 @@
 			<div id="responseSplash">
 				<p class="calificacion"></p>
 				<p class="remate"></p>
-				Clicka para continuá
+				<div class="roundUp">
+					<p class="roundUpLabel" style="float:left; width:40%"></p>
+					<p class="roundUpScore" style="float:right; text-align:right; width:40%"></p>
+				</div>
+				<div class="cta">
+					<div class="izq"></div>
+					<div class="centro"><p>Clicka para continuá</p></div>
+					<div class="der"></div>
+				</div>
+				
 			</div>
 			<div id="startSplash">
-				<h1>Trivia IGN</h1>
-				<p style="text-align:center">Comenzar</p>
+				<div class="title">Geo Trivia IGN</div>
+				<div class="cta" style="margin-top: 13vw;">
+					<div class="izq"></div>
+					<div class="centro"><p>Comenzar</p></div>
+					<div class="der"></div>
+				</div>
 			</div>
 			<div id="endSplash"></div>
 			<div id="errorSplash">
 				<h1>ERROR!</h1>
 				<p></p>
 			</div>
-		</div>
 
+			
+		</div>
+<div class="izqbtm"></div>
+			<div class="centrobtm"></div>
+			<div class="derbtm"></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="lib/jquery-1.11.0.min.js"></script>
@@ -74,7 +92,7 @@
     <script src="src/triviaJS.js"></script>
     <script>
     $(document).ready(function(){
-      $('body').trivia({record:321,preguntasUrl:'triviafile.json'});
+      $('body').trivia({record:321,preguntasUrl:'triviafile.json',questionsPerGame:2});
     })
     </script>
 

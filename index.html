@@ -1,29 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Trivia JS</title>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rye&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="triviaIgn.css">
-    <title>Trivia IGN</title>
-
-    <!-- Bootstrap
-    <link href="lib/bootstrap.min.css" rel="stylesheet">
-    -->
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <style type="text/css">
-      
+    <style>
+      /*p {margin:0;}*/
     </style>
   </head>
-  <body style="">
+
+  <body>
+    <div id="gameSpace">
+      <img id="background" src="images/fondos/1.jpg" />
+      <div id="questionBox">
+        <p id="consigna"></p>
+        <div class="cta">
+          <div class="izq"></div>
+          <div class="centro"><p>Elige tu respuesta...</p></div>
+          <div class="der"></div>
+        </div>
+      </div>
+      <div id="questionLabel">
+        <div class="izq"></div>
+        <div class="centro"></div>
+        <div class="der"></div>
+        <div class="numcontainer" id="numeroPregunta"></div>
+      </div>
+
+      <div class="respuesta" id="opcion1" data-index="0">
+        <div class="opciones">
+          <div class="boton"></div>
+          <p></p>
+        </div>
+      </div>
+      <div class="respuesta" id="opcion2" data-index="1">
+        <div class="opciones">
+          <div class="boton"></div>
+          <p></p>
+        </div>
+      </div>
+      <div class="respuesta" id="opcion3" data-index="2">
+        <div class="opciones">
+          <div class="boton"></div>
+          <p></p>
+        </div>
+      </div>
+
+      <div id="responseSplash">
+        <p class="calificacion"></p>
+        <p class="remate"></p>
+        <div class="roundUp" style="width:50%;margin: 30px auto;">
+          <span class="roundUpLabel" style="width:45%;inline-block;float:left;"></span>
+          <span class="roundUpScore" style="width:45%;inline-block;float:right;text-align:right;"></span>
+        </div>
+        <div class="cta" style="clear:both">
+          <div class="izq"></div>
+          <div class="centro"><p>Clicka para continuá</p></div>
+          <div class="der"></div>
+        </div>
+      </div>
+
+      <div id="startSplash">
+        <div class="title">Geo Trivia IGN</div>
+        <div class="cta" style="margin-top: 13vw;">
+          <div class="izq"></div>
+          <div class="centro"><p>Comenzar</p></div>
+          <div class="der"></div>
+        </div>
+      </div>
+
+      <div id="endSplash">
+        <div class="finalScoreLabel">Tu puntaje final es:</div>
+        <div class="finalScore"></div>
+      </div>
+
+      <div id="errorSplash">
+        <h1>ERROR!</h1>
+        <p></p>
+      </div>
+
+      
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="lib/jquery-1.11.0.min.js"></script>
@@ -36,8 +97,9 @@
     <script src="src/triviaJS.js"></script>
     <script>
     $(document).ready(function(){
-      $('body').trivia({record:321,preguntasUrl:'triviafile.json'});
+      $('body').trivia({record:321,preguntasUrl:'triviafile.json',questionsPerGame:2});
     })
     </script>
+
   </body>
 </html>

@@ -3,11 +3,11 @@
         {
             "id": "1",
             "consigna":"¿Cuál es la cota (altura) del cerro Aconcagua, ubicado en la provincia de Mendoza?",
-            "respuesta":"6961 metros",
+            "respuesta":"6960.8 metros",
             "remate":"En el año 2012 el Instituto Geográfico Nacional determinó que la cota oficial del cerro Aconcagua es de 6960,8",
             "opciones":[
-                "6961 metros",
-                "6959 metros",
+                "6960.8 metros",
+                "7157.2 metros",
                 "8848 metros"
             ]
         },
@@ -218,6 +218,336 @@
                 "29",
                 "34",
                 "12"
+            ]
+        },
+        {
+            "id": "21",
+            "consigna":"¿Cuál es la altura del Obelisco de la Ciudad de Buenos Aires?",
+            "respuesta":"67.5 metros",
+            "remate":"La altura del Obelisco de la Ciudad de Buenos Aires es de 67.5 metros. El Obelisco fue construido en 1936 con motivo del cuarto centenario de la fundación de la ciudad. Está emplazado en la Plaza de la República, en la intersección de las avenidas Corrientes y 9 de Julio. Fue declarado Monumento Histórico Nacional.",
+            "opciones":[
+                "67.5 metros",
+                "61.2 metros",
+                "105.7 metros"
+            ]
+        },
+        {
+            "id": "22",
+            "consigna":"¿Cuál es el máximo ancho del Río de la Plata?",
+            "respuesta":"219 km",
+            "remate":"El Río de la Plata esta formado por la unión de los ríos Paraná y Uruguay. Debido a su anchura, es reconocido como el río más ancho del mundo.",
+            "opciones":[
+                "150 km",
+                "329 km",
+                "219 km"
+            ]
+        },
+        {
+            "id": "23",
+            "consigna":"¿Cuál es el la avenida más larga de la Ciudad de Buenos Aires?",
+            "respuesta":"Rivadavia",
+            "remate":"La avenida más larga de la Ciudad de Buenos Aires es Rivadavia. Con más de 35 km de extensión nace en la Plaza de Mayo, centro histórico de la ciudad, y finaliza en Moreno, Provincia de Buenos Aires.",
+            "opciones":[
+                "Cabildo",
+                "Corrientes",
+                "Rivadavia"
+            ]
+        },
+        {
+            "id": "24",
+            "consigna":"¿En que año El Parque Nacional Los Glaciares fue declarado patrimonio de la humanidad por la UNESCO?",
+            "respuesta":"1981",
+            "remate":"El parque Nacional Los Glaciares fue declarado patrimonio de la humanidad por la UNESCO en el año 1981. Se extiende sobre 726 927ha ubicadas en el sudoeste de la Provincia de Santa Cruz.",
+            "opciones":[
+                "1981",
+                "1937",
+                "1999"
+            ]
+        },
+        {
+            "id": "25",
+            "consigna":"¿Qué superficie tiene la Ciudad de Buenos Aires?",
+            "respuesta":"200 Km²",
+            "remate":"La Ciudad de Buenos Aires tiene una superficie de 200 Km²",
+            "opciones":[
+                "200 Km²",
+                "304 Km²",
+                "105 Km²"
+            ]
+        },
+        {
+            "id": "26",
+            "consigna":"¿En que provincia se encuentra el Cerro Uritorco?",
+            "respuesta":"Córdoba",
+            "remate":"El cerro Uritorco se encuentra en la provincia de Córdoba. El Uritorco tiene una altura de 1949 msnm y esta situado en el norte del Valle de Punilla, próximo a Capilla del Monte.",
+            "opciones":[
+                "Tucumán",
+                "Salta",
+                "Córdoba"
+            ]
+        },
+        {
+            "id": "27",
+            "consigna":"¿Cuál es la avenida más ancha de la Ciudad de Buenos Aires?",
+            "respuesta":"Avenida 9 de Julio",
+            "remate":"La avenida 9 de Julio es la más ancha de la Ciudad de Buenos Aires.  Su ancho es de 140 metros. Lleva su nombre en honor al día de la declaración de independencia del país, efectuada el 9 de julio de 1816.",
+            "opciones":[
+                "Avenida 9 de Julio",
+                "Avenida Rivadavia",
+                "Avenida Corrientes"
+            ]
+        },
+        {
+            "id": "28",
+            "consigna":"¿En que año fue creado El Parque Nacional Iguazú?",
+            "respuesta":"1934",
+            "remate":"El parque Nacional Iguazú fue creado en el 9 de octubre de 1934. Es un área protegida de la Argentina creada con el objetivo de conservar el entorno y la biodiversidad de las cataratas del Iguazú, las que resultaron elegidas como una de las «Siete maravillas naturales del mundo».",
+            "opciones":[
+                "1984",
+                "1934",
+                "1994"
+            ]
+        },
+        {
+            "id": "29",
+            "consigna":"¿Cuántos barrios tiene la Ciudad de Buenos Aires?",
+            "respuesta":"48",
+            "remate":"La Ciudad de Buenos Aires se encuentra dividida en 48 barrios. Los más antiguos derivan de las antiguas parroquias establecidas en el siglo XIX. A partir de fines del siglo XIX surge una nueva generación de barrios, ya no determinados por parroquias sino con distintos orígenes.",
+            "opciones":[
+                "48",
+                "100",
+                "74"
+            ]
+        },
+        {
+            "id": "30",
+            "consigna":"¿En que provincia se encuentra La Cueva de las Manos del Río Pinturas?",
+            "respuesta":"Santa Cruz",
+            "remate":"La Cueva de las Manos del Río Pinturas se encuentra en la Provincia de Santa Cruz. Es un sitio arqueológico y de pinturas rupestres que data de 7350 años A.C. Se trata de una de las expresiones artísticas más antiguas de los pueblos sudamericanos y ha sido declarada Patrimonio de la Humanidad por la UNESCO.",
+            "opciones":[
+                "Río Negro",
+                "Chubut",
+                "Santa Cruz"
+            ]
+        },
+        {
+            "id": "31",
+            "consigna":"¿Cuál es el barrio con mayor superficie de la Ciudad de Buenos Aires?",
+            "respuesta":"Palermo",
+            "remate":"El barrio con mayor superficie de la Ciudad De Buenos Aires es Palermo. Con una extensión de 15,9 Km² se ubicada al norte de la ciudad y su territorio abarca la totalidad de la Comuna 14.",
+            "opciones":[
+                "Villa Urquiza",
+                "Palermo",
+                "San Nicolás"
+            ]
+        },
+        {
+            "id": "32",
+            "consigna":"¿En que provincia se encuentra la Península Valdés?",
+            "respuesta":"Chubut",
+            "remate":"La Península Valdés se encuentra en la  Provincia del Chubut. Es uno de los Patrimonios de la Humanidad declarado por la UNESCO en Argentina. Presenta una porción de tierra de contorno casi triangular unida al continente por el istmo Carlos Ameghino. Su centro geográfico se ubica hacia las coordenadas: 42°31′S 63°55′O.",
+            "opciones":[
+                "Río Negro",
+                "Chubut",
+                "Santa Cruz"
+            ]
+        },
+        {
+            "id": "33",
+            "consigna":"¿Cuál es el barrio con menor superficie de la Ciudad de Buenos Aires?",
+            "respuesta":"San Telmo",
+            "remate":"El barrio con menor superficie de la Ciudad de Buenos Aires es San Telmo. Con sólo 1,2 Km² de extensión, es uno de los barrios más antiguos de la ciudad.",
+            "opciones":[
+                "Monserrat",
+                "La Boca",
+                "San Telmo"
+            ]
+        },
+        {
+            "id": "34",
+            "consigna":"¿Cuál es el nombre de la capital de Misiones?",
+            "respuesta":"Posadas",
+            "remate":"El nombre de la capital de Misiones es Posadas. Ubicada en las coordenadas 27°22′0″S 55°53′49″O es la ciudad más poblada de la provincia y su centro administrativo, comercial y cultural.",
+            "opciones":[
+                "Rawson",
+                "Posadas",
+                "Puerto Iguazú"
+            ]
+        },
+        {
+            "id": "35",
+            "consigna":"¿Cuál provincia argentina es popularmente conocida como el “Jardín de la República”?",
+            "respuesta":"Tucumán",
+            "remate":"Tucumán es popularmente conocida como el “Jardín de la República”. La cantidad de precipitaciones da lugar a una zona de vegetación abundante que justifica que la provincia sea conocida con tal denominación.",
+            "opciones":[
+                "Mendoza",
+                "Salta",
+                "Tucumán"
+            ]
+        },
+        {
+            "id": "36",
+            "consigna":"¿Cuál es el barrio que se encuentra en el centro geográfico de la Ciudad de Buenos Aires?",
+            "respuesta":"Caballito",
+            "remate":"El barrio de Caballito se encuentra en el centro geográfico de la Ciudad Buenos Aires y su territorio coincide con el de la Comuna 6. Tiene una superficie de 6,8 km2. El sitio correcto está ubicado sobre la calle Avellaneda 1023, a pocos metros de la cancha del club Ferrocarril Oeste. Allí se encuentra una casa de principios del siglo pasado, que presenta en su fachada una placa de fundición de hierro que dice: 'Municipalidad de la Ciudad de Buenos Aires, Dirección General de Catastro. En esta parcela 14, de la manzana 9, sección 45, circunscripción 7, se halla el centro geométrico de la ciudad'.",
+            "opciones":[
+                "La Boca",
+                "Almagro",
+                "Caballito"
+            ]
+        },
+        {
+            "id": "37",
+            "consigna":"¿En cuál provincia se encuentra ubicado el Volcán Lanín?",
+            "respuesta":"Neuquén",
+            "remate":"El Volcán Lanín se encuentra ubicado en la provincia del Neuquén. Situado en las coordenadas 39°38′22″S 71°30′64″O posee una altitud de 3776 msnm.",
+            "opciones":[
+                "Neuquén",
+                "San Juan",
+                "Mendoza"
+            ]
+        },
+        {
+            "id": "38",
+            "consigna":"¿En la cima de cuál cerro argentino se encuentra la escultura denominada “El Cristo Bendicente” del artista Juan Carlos Iramain?",
+            "respuesta":"Cerro San Javier",
+            "remate":"El Cristo Bendicente se encuentra en la cima del cerro San Javier, en Yerba Buena (provincia de Tucumán). Mide 28 metros de altura y levanta su brazo derecho en signo de bendición.",
+            "opciones":[
+                "Cerro Uritorco",
+                "Cerro San Javier",
+                "Cerro San Bernardo"
+            ]
+        },
+        {
+            "id": "39",
+            "consigna":"¿En cuál provincia se encuentra el Parque Nacional “El Palmar”?",
+            "respuesta":"Entre Ríos",
+            "remate":"El parque nacional El Palmar se encuentra ubicado en la provincia de Entre Ríos.  Fue creado en 1966 con el objetivo de conservar un sector representativo de palmares de yatay.",
+            "opciones":[
+                "Chaco",
+                "Entre Ríos",
+                "Formosa"
+            ]
+        },
+        {
+            "id": "40",
+            "consigna":"¿Cuál localidad de la provincia del Chubut es considerada “La Capital de la Fruta Fina”?",
+            "respuesta":"El Hoyo",
+            "remate":"El Hoyo es la localidad de la provincia del Chubut considerada como “la Capital de la Fruta Fina”. Declarada en el año 1986 todos los meses de enero se celebra la Fiesta Nacional de la Fruta Fina con el objetivo de homenajear la principal actividad económica. El grupo de “frutas finas” -denominación que se vincula al aspecto comercial y no al botánico- incluye a un conjunto de especies que se caracterizan por su reducido tamaño y pueden clasificarse en Berries, (Arándanos, Frambuesas rojas, Moras y frutillas) y Cherries (Cerezas y Guindas)",
+            "opciones":[
+                "El Hoyo",
+                "El Bolsón",
+                "El Maiten"
+            ]
+        },
+        {
+            "id": "41",
+            "consigna":"¿Sobre que río se encuentra la represa hidroeléctrica “El Chocón”?¿Sobre que río se encuentra la represa hidroeléctrica “El Chocón”?",
+            "respuesta":"Río Limay",
+            "remate":"La represa hidroeléctrica “El Chocón” se encuentra sobre el Río Limay. Las obras del Aprovechamiento El Chocón se compone de una Central Hidroeléctrica, una Presa de material granular y núcleo impermeable, un Vertedero con 4 compuertas radicales, una Obra de Tomas y Tuberías Forzadas. La energía eléctrica es producida por seis generadores de 200.000 KW cada uno, con una capacidad máxima total de evacuación de 2.400 m3/s. La generación media anual de proyecto es de 3.350 millones de Kwh.",
+            "opciones":[
+                "Río Limay",
+                "Río Negro",
+                "Río Colorado"
+            ]
+        },
+        {
+            "id": "42",
+            "consigna":"¿En cuál provincia se encuentran las ruinas de San Ignacio?",
+            "respuesta":"Misiones",
+            "remate":"Las ruinas de San Ignacio  en la provincia de Misiones, a unos 60 km de la capital provincial, Posadas.",
+            "opciones":[
+                "Misiones",
+                "Corrientes",
+                "Formosa"
+            ]
+        },
+        {
+            "id": "43",
+            "consigna":"¿Cuál es el nombre del centro de esquí más conocido de la provincia de Mendoza?",
+            "respuesta":"Las Leñas",
+            "remate":"El centro de esquí más conocido de la provincia de Mendoza es “Las Leñas”. Posee el descenso ininterrumpido más largo del país, con 7050 m conectando las pistas Apolo, Neptuno y Venus.",
+            "opciones":[
+                "Las Leñas",
+                "Catedral",
+                "Chapelco"
+            ]
+        },
+        {
+            "id": "44",
+            "consigna":"¿Cuál es la superficie del Glaciar Perito Moreno?",
+            "respuesta":"250 Km²",
+            "remate":"El glaciar Perito Moreno esta ubicado en el departamento Lago Argentino de la provincia de Santa Cruz. Su nombre hace honor a Francisco Moreno, director del museo de la Sociedad Científica Argentina y activo explorador de la zona austral de la Argentina.",
+            "opciones":[
+                "450 Km²",
+                "700 Km²",
+                "250 Km²"
+            ]
+        },
+        {
+            "id": "45",
+            "consigna":"¿Qué ciudad es conocida como la “capital nacional del petróleo”?",
+            "respuesta":"Comodoro Rivadavia",
+            "remate":"La ciudad de Comodoro Rivadavia es conocida como la “capital nacional del petróleo”. Se le ha otorgado ese nombre en reconocimiento por su papel protagónico en los inicios de la generación de esa fuente de energía.",
+            "opciones":[
+                "Comodoro Rivadavia",
+                "Trelew",
+                "Gobernador Costa"
+            ]
+        },
+        {
+            "id": "46",
+            "consigna":"¿A orillas de que río se levanta el monumento a la bandera en la ciudad de Rosario?",
+            "respuesta":"Paraná",
+            "remate":"El Monumento Histórico Nacional a la Bandera se levanta a orillas del Río Paraná. Es una construcción simbólica en el lugar donde el general Manuel Belgrano enarboló e izó por primera vez la Bandera Argentina, el 27 de febrero de 1812.",
+            "opciones":[
+                "Paraguay",
+                "Uruguay",
+                "Paraná"
+            ]
+        },
+        {
+            "id": "47",
+            "consigna":"¿Cuál es la capital de la provincia de Buenos Aires?",
+            "respuesta":"La Plata",
+            "remate":"La capital de la provincia de Buenos Aires es La Plata. Se ubica a 56 Km. al sudeste de la ciudad de Buenos Aires. Fue fundada oficialmente por el gobernador Dardo Rocha el 19 de noviembre de 1882",
+            "opciones":[
+                "Buenos Aires",
+                "La Plata",
+                "Lomas de Zamora"
+            ]
+        },
+        {
+            "id": "48",
+            "consigna":"¿Cuál es el partido con mayor superficie del Gran Buenos Aires?",
+            "respuesta":"La Matanza",
+            "remate":"El partido con mayor superficie del Gran Buenos Aires es La Matanza. Cuenta con una superficie total de 325,71 Km². El distrito limita al noroeste con la Ciudad Autónoma de Buenos Aires, al sudoeste con Cañuelas y Marcos Paz, mientras que al sudeste con los partidos de Lomas de Zamora y Esteban Echeverría; y por último al noroeste con Marcos Paz, Merlo, Morón y Tres de Febrero.",
+            "opciones":[
+                "La Matanza",
+                "Lomas de Zamora",
+                "General San Martín"
+            ]
+        },
+        {
+            "id": "49",
+            "consigna":"¿En cuál provincia se encuentra el Cerro de los Siete Colores?",
+            "respuesta":"Jujuy",
+            "remate":"El Cerro de los Siete Colores se encuentra en la provincia de Jujuy.  La localidad de Purmamarca se encuentra a sus pies y ambos forman una de las postales más reconocidas del noroeste argentino.",
+            "opciones":[
+                "Salta",
+                "Jujuy",
+                "La Rioja"
+            ]
+        },
+        {
+            "id": "50",
+            "consigna":"¿En cuál provincia se celebra la Fiesta Nacional de la Vendimia?",
+            "respuesta":"Mendoza",
+            "remate":"La Fiesta Nacional de la Vendimia se celebra en la provincia de Mendoza. Refleja la celebración de la uva transformada en vino a través del esfuerzo que los viñateros llevan a cabo. Su primer festejo se realizó en el año 1936.",
+            "opciones":[
+                "Mendoza",
+                "La Rioja",
+                "San Juan"
             ]
         }
     ]

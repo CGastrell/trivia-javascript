@@ -36,12 +36,27 @@ user-select: none;
   height: 100%;
 }
 #startSplash, #endSplash {
+  width: 100%;
   position: absolute;
-  width: 50%;
-  height: 50%;
-  border: 2px solid blue;
-  top: 25%;
-  left: 25%;
+  top: 125px;
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  color: rgb(231, 247, 255);
+  padding: 10px;
+  line-height: 1.2vw;
+  text-transform: none;
+  text-shadow:0 5px 5px rgba(0,0,0,0.4);
+  text-align: center;
+  margin-top: 2vw;
+  border:1px solid rgba(0,0,0,0.3);
+  box-shadow:0 5px 5px rgba(0,0,0,0.4), inset 0 12px 10px -4.5px rgba(0,0,0,0.2);
+  background-color: rgba(145, 42, 136, 0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-left: none;
+  border-right: none;
+  padding: 2%;
+}
 }
 #questionLabel {
   height: 7.2vw;
@@ -64,8 +79,8 @@ user-select: none;
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size:cover;
-  width: 7.2vw;
-  height: 7.2vw;
+  width: 4vw;
+  height: 4vw;
   margin-bottom: 1%;
   left: 0;
   position: absolute; 
@@ -76,11 +91,50 @@ user-select: none;
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size:cover;
-  width: 7.2vw;
-  height: 7.2vw;
+  width: 4vw;
+  height: 4vw;
   right: 0;
   position: absolute;
 }
+
+.centrobtm {
+  background-image:url(images/ribetebtm.png);
+  background-position: 50% bottom;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 8vw;
+  height: 4vw;
+  left: 42%;
+  position: relative;
+  float:left;
+}
+
+.izqbtm {
+  background-image: url(images/ribeteibtm.png);
+  background-position: 0 bottom;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 4vw;
+  height: 4vw;
+  left: 0;
+  position: relative; 
+  float:left;
+}
+
+.derbtm{
+  background-image:url(images/ribetedbtm.png);
+  background-position: 0 bottom;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 4vw;
+  height: 4vw;
+  right: 0;
+  position: relative;
+  float:right;
+}
+
+
+
 #questionLabel .numcontainer{
   background: url(images/estampa.png) 0 0 no-repeat;
   background-size: 100%;
@@ -143,6 +197,20 @@ user-select: none;
   margin: 1vw 0 0 0;
 }
 
+.calificacion {
+  pointer-events: none;
+}
+
+
+.remate {
+  pointer-events: none;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: x-large;
+  line-height: normal;
+}
+
 .cta {
   height: 7.2vw;
   min-width:10vw;
@@ -193,10 +261,37 @@ user-select: none;
   margin-top:-7.2vw;
 }
 
+
 #responseSplash {
+  width: 100%;
   position: absolute;
-  width: 50%;
-  height: 50%;  
+  top: 50px;
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  color: rgb(231, 247, 255);
+  padding: 10px;
+  line-height: 1.2vw;
+  text-transform: none;
+  text-shadow:0 5px 5px rgba(0,0,0,0.4);
+  text-align: center;
+  margin-top: 2vw;
+  border:1px solid rgba(0,0,0,0.3);
+  box-shadow:0 5px 5px rgba(0,0,0,0.4), inset 0 12px 10px -4.5px rgba(0,0,0,0.2);
+  background-color: rgba(145, 42, 136, 0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-left: none;
+  border-right: none;
+  padding: 2%;
+}
+#startSplash .title{
+  font-family: 'Rye', cursive;
+  font-size: 7vw;
+  margin: 3vw 0;
+}
+ #responseSplash .calificacion{
+  font-family: 'Rye', cursive;
+  font-size: 4vw;
 }
 .respuesta {
   position: absolute;
