@@ -255,11 +255,16 @@
 			this.slideShow = new TweenMax.to({id:0,v:0},5,{
 				v:1,
 				onRepeatParams: [this.background],
+				onStart: function() {
+					this.randong = ((Math.random() * 50) << 0) + 1;
+					$('<img />').attr('src','images/fondos/'+this.randong+'.jpg');
+				},
 				onRepeat:function(img){
-					var rr = ((Math.random() * 50) << 0) + 1;
 					TweenMax.to(img,0.5,{alpha:0,yoyo: true, repeat:1, onRepeat:function(){
-						img.attr('src','images/fondos/'+rr+'.jpg');
+						img.attr('src','images/fondos/'+this.randong+'.jpg');
 					}});
+					this.randong = ((Math.random() * 50) << 0) + 1;
+					$('<img />').attr('src','images/fondos/'+this.randong+'.jpg');
 				},
 				repeat: -1
 			});
