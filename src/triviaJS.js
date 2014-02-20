@@ -8,13 +8,15 @@
 		options: {
 			questions: [],
 			hiScore: "0000",
-			tiempoLimite: 10,
+			scorePerQuestion: 5000,
+			secondsPerQuestion: 10,
 			questionsPerGame: 10,
+			questionsArrayName: 'questions',
+			questionsFileUrl: "",
 			labels: {
 				hiScore: "TOP: ",
 				title: "GeoTrivia",
 				playerScore: "PUNTOS: ",
-				preguntasUrl: ""
 			}
 		},
 		_create: function(){
@@ -32,25 +34,25 @@
 				this._loadQuestions()
 			).then(
 				function(data){
-					if(data["preguntas"] === undefined) {
+					if(data[_this.options.questionsArrayName] === undefined) {
 						_this._showError('no se encontro el item "preguntas"');
 						return false;
 					}
-					_this.options.questions = data["preguntas"].slice();
+					_this.options.questions = data[_this.options.questionsArrayName].slice();
 					_this._showStartSplash();
 				},
 				function(){
-					if(_this.options.questions["preguntas"] === undefined) {
+					if( $.isEmptyObject(_this.options.questions) ) {
 						_this._showError('no se pudo cargar el archivo de preguntas y no se suministraron preguntas');
 					}
 				}
 			);//.done(function(){console.log('done')});
 		},
 		_loadQuestions: function(callback) {
-			// if(this.options.preguntasUrl === "")
+			// if(this.options.questionsFileUrl === "")
 			var _this = this;
 			var d = $.Deferred(function(defer){
-				$.getJSON(_this.options.preguntasUrl).then(defer.resolve, defer.reject);
+				$.getJSON(_this.options.questionsFileUrl).then(defer.resolve, defer.reject);
 			}).promise();
 			return d.done(callback);
 		},
@@ -165,7 +167,7 @@
 			var correcto = respuesta === this.preguntaActual.respuesta;
 
 			var tiempo = this.questionEndTime - this.questionStartTime;
-			var puntos = this.options.tiempoLimite * 1000 - tiempo;
+			var puntos = this.options.secondsPerQuestion * 1000 - tiempo;
 			if(puntos < 0 || !correcto) {
 				puntos = 0;
 			}
