@@ -17,6 +17,9 @@
 				hiScore: "TOP: ",
 				title: "GeoTrivia",
 				playerScore: "PUNTOS: ",
+				roundUpLabelHeader: "Puntos",
+				roundUpLabelQuestion: "Respuesta correcta:",
+				roundUpLabelTimebonus: "Bonus por tiempo:"
 			}
 		},
 		_create: function(){
@@ -167,21 +170,26 @@
 			var correcto = respuesta === this.preguntaActual.respuesta;
 
 			var tiempo = this.questionEndTime - this.questionStartTime;
-			var puntos = this.options.secondsPerQuestion * 1000 - tiempo;
-			if(puntos < 0 || !correcto) {
-				puntos = 0;
+			var timePoints = this.options.secondsPerQuestion * 1000 - tiempo;
+			if(timePoints < 0 || !correcto) {
+				timePoints = 0;
 			}
-			this.roundPoints += puntos;
+			var questionPoints = correcto ? this.options.scorePerQuestion : 0;
+
+			this.roundPoints += timePoints;
+			this.roundPoints += questionPoints;
 
 			this.responseSplash.find('p.calificacion').first().text(correcto ? 'CORRECTO!' : 'INCORRECTO!');
 			this.responseSplash.find('p.remate').first().text(this.preguntaActual.remate);
 
-			var roundUpLabel = $('.roundUpLabel', this.roundUpDiv);
-			var roundUpScore = $('.roundUpScore', this.roundUpDiv);
+			var roundUpLabelQuestion = $('.roundUpLabelQuestion', this.roundUpDiv);
+			var roundUpLabelTimebonus = $('.roundUpLabelTimebonus', this.roundUpDiv);
+			var roundUpScoreTimebonus = $('.roundUpScoreTimebonus', this.roundUpDiv);
+			var roundUpScoreQuestion = $('.roundUpScoreQuestion', this.roundUpDiv);
 			var next = $('.cta', this.responseSplash);
 
-			roundUpLabel.text("Puntos por esta respuesta: ");
-			roundUpScore.text("0");
+			roundUpScoreQuestion.text("0");
+			roundUpScoreTimebonus.text("0");
 
 			TweenMax.set(this.responseSplash,{autoAlpha:1,scale:1});
 			
@@ -215,14 +223,30 @@
 				TweenMax.from(this.responseSplash,0.5,{y: -1000, autoAlpha:0, ease: Back.easeOut})
 			);
 			tl.add(TweenMax.set(this.roundUpDiv,{autoAlpha:1}));
-			tl.add(TweenMax.staggerFrom([roundUpLabel, roundUpScore],0.25,{autoAlpha:0, x: "+=100"},0.25),"+=1.5");
-			if(puntos > 0) {
+			tl.add(TweenMax.staggerFrom([
+				roundUpLabelQuestion,
+				roundUpLabelTimebonus,
+				roundUpScoreTimebonus,
+				roundUpScoreQuestion
+				],0.25,{autoAlpha:0, x: "+=100"},0.25),"+=1.5");
+			if(questionPoints > 0) {
 				var score = {points: 0};
 				tl.add(
 					TweenMax.to(score,3,{
-						points: puntos,
+						points: questionPoints,
 						onUpdate: function() {
-							roundUpScore.text( score.points << 0)
+							roundUpScoreQuestion.text( score.points << 0)
+						}
+					})
+				);
+			}
+			if(timePoints > 0) {
+				var score2 = {bonusPoints: 0};
+				tl.add(
+					TweenMax.to(score2,3,{
+						bonusPoints: timePoints,
+						onUpdate: function() {
+							roundUpScoreTimebonus.text( score2.bonusPoints << 0)
 						}
 					})
 				);
@@ -262,8 +286,9 @@
 					$('<img />').attr('src','images/fondos/'+this.randong+'.jpg');
 				},
 				onRepeat:function(img){
+					var rr = this.randong;
 					TweenMax.to(img,0.5,{alpha:0,yoyo: true, repeat:1, onRepeat:function(){
-						img.attr('src','images/fondos/'+this.randong+'.jpg');
+						img.attr('src','images/fondos/'+rr+'.jpg');
 					}});
 					this.randong = ((Math.random() * 50) << 0) + 1;
 					$('<img />').attr('src','images/fondos/'+this.randong+'.jpg');
@@ -292,7 +317,9 @@
 			});
 
 			this.roundUpDiv = $('.roundUp',this.responseSplash);
-
+			$('.roundUpLabelQuestion', this.roundUpDiv).text(this.roundUpLabelQuestion);
+			$('.roundUpLabelTimebonus', this.roundUpDiv).text(this.roundUpLabelTimebonus);
+			$('.roundUpLabelHeader', this.roundUpDiv).text(this.roundUpLabelHeader);
 			this.questionBox.outerWidth(this.width);
 
 			this._center(this.errorSplash, this.element);

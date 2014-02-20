@@ -54,8 +54,14 @@
         <p class="calificacion"></p>
         <p class="remate"></p>
         <div class="roundUp" style="width:50%;margin: 30px auto;">
-          <span class="roundUpLabel" style="width:45%;inline-block;float:left;"></span>
-          <span class="roundUpScore" style="width:45%;inline-block;float:right;text-align:right;"></span>
+          <p class="roundUpLabelHeader">Puntos</p>
+          <span class="roundUpLabelQuestion" style="width:45%;inline-block;float:left;"></span>
+          <span class="roundUpScoreQuestion" style="width:45%;inline-block;float:right;text-align:right;"></span>
+          <br style="clear:both" />
+          <span class="roundUpLabelTimebonus" style="width:45%;inline-block;float:left;"></span>
+          <span class="roundUpScoreTimebonus" style="width:45%;inline-block;float:right;text-align:right;"></span>
+          <br style="clear:both" />
+          <span class="roundUpScoreTotal" style="width:45%;inline-block;float:right;text-align:right;"></span>
         </div>
         <div class="cta" style="clear:both">
           <div class="izq"></div>
@@ -82,6 +88,11 @@
         <h1>ERROR!</h1>
         <p></p>
       </div>
+      <div style="width:100%; bottom:0; position:absolute;">
+        <div class="izqbtm"></div>
+        <div class="centrobtm"></div>
+        <div class="derbtm"></div>
+      </div>
 
       
     </div>
@@ -94,10 +105,10 @@
     <script src="lib/bootstrap.min.js"></script>
     -->
 
-    <script src="triviaJS.min.js"></script>
+    <script src="src/triviaJS.js"></script>
     <script>
     $(document).ready(function(){
-      $('body').trivia({record:321,questionsFileUrl:'triviafile.json',questionsPerGame:2});
+      $('body').trivia({record:321,questionsFileUrl:'triviafile.json',questionsPerGame:10});
     })
     </script>
 
