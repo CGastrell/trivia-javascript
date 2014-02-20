@@ -26,30 +26,25 @@
 			this.width = this.element.innerWidth();
 			this.height = this.element.innerHeight();
 			var _this = this;
-			// this.element.html("");
+			this._setUpGameSpace();
+			this._setupSlideshow();
 			$.when(
-				this._loadQuestions(function(data){
+				this._loadQuestions()
+			).then(
+				function(data){
 					if(data["preguntas"] === undefined) {
 						_this._showError('no se encontro el item "preguntas"');
-						return true;
+						return false;
 					}
 					_this.options.questions = data["preguntas"].slice();
-				})
-			).done(
-				// this._crearBarraInfo(),
-				// this._crearEspacioDeJuego(),
-				this._setUpGameSpace(),
-				this._showStartSplash()
-			).fail(function(){
-				if($.isEmptyObject(_this.options.questions)) {
-					_this._showError('no se pudo cargar el archivo de preguntas');
-					return false;
+					_this._showStartSplash();
+				},
+				function(){
+					if(_this.options.questions["preguntas"] === undefined) {
+						_this._showError('no se pudo cargar el archivo de preguntas y no se suministraron preguntas');
+					}
 				}
-				if(_this.options.questions["preguntas"] === undefined) {
-					_this._showError('no hay preguntas disponibles');
-				}
-			});
-
+			);//.done(function(){console.log('done')});
 		},
 		_loadQuestions: function(callback) {
 			// if(this.options.preguntasUrl === "")
@@ -60,6 +55,7 @@
 			return d.done(callback);
 		},
 		startGame: function() {
+			this.slideShow.pause();
 			this.roundQuestions = [];
 			this.preguntaActual = null;
 			this.roundPoints = 0;
@@ -75,7 +71,7 @@
 				scale:0.1,
 				ease: Back.easeIn,
 				onComplete: $.proxy(this._showQuestion,_this)
-			})
+			});
 		},
 		_showEndSplash:function() {
 			var _this = this;
@@ -127,7 +123,7 @@
 			this.questionBox.find('#consigna').first().text(this.preguntaActual.consigna);
 
 			var responder = function() {
-				_this._responder($(this).find('p').first().text());
+				_this._processResponse($(this).find('p').first().text());
 			}
 			var hookRespuestas = function() {
 				_this.respuesta1.on('click', responder);
@@ -156,12 +152,11 @@
 					],
 					0.25,
 					{autoAlpha: 0,scale:0.2,ease: Back.easeOut, delay:1},
-					0.15,
-					function() {console.log('respuestas mostradas')}
+					0.15
 				)
 			);
 		},
-		_responder: function(respuesta) {
+		_processResponse: function(respuesta) {
 			this.questionEndTime = new Date();
 			this.respuesta1.off('click');
 			this.respuesta2.off('click');
@@ -237,6 +232,7 @@
 			return o;
 		},
 		_showStartSplash: function() {
+			this.slideShow.resume();
 			TweenMax.staggerTo(
 				[
 					this.endSplash,
@@ -246,12 +242,27 @@
 					this.responseSplash,
 				],0.5,{autoAlpha:0}
 			);
+			TweenMax.set(this.startSplash,{scale:1,autoAlpha:0});
 			TweenMax.to(this.startSplash,0.5,{autoAlpha:1});
 		},
 		_zOrder: function(boxesArray) {
 			for(var ii=0; ii < boxesArray.length; ii++) {
 				boxesArray[ii].css('z-index',ii + 20);
 			}
+		},
+		_setupSlideshow: function() {
+			var _this = this;
+			this.slideShow = new TweenMax.to({id:0,v:0},5,{
+				v:1,
+				onRepeatParams: [this.background],
+				onRepeat:function(img){
+					var rr = ((Math.random() * 50) << 0) + 1;
+					TweenMax.to(img,0.5,{alpha:0,yoyo: true, repeat:1, onRepeat:function(){
+						img.attr('src','images/fondos/'+rr+'.jpg');
+					}});
+				},
+				repeat: -1
+			});
 		},
 		_setUpGameSpace: function() {
 			var _this = this;
@@ -372,7 +383,6 @@
 			client.offset(n);
 		},
 		_crearBarraInfo: function() {
-			// console.log(this.options);
 			this.statusBar = $('<div id="statusBar" />')
 				.css({
 					"background": "black",
