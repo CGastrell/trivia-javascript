@@ -6,6 +6,7 @@
 		questionStartTime: 0,
 		questionEndTime: 0,
 		options: {
+			useTemplate: true,
 			useStore: true,
 			questions: [],
 			hiScore: "000000",
@@ -28,7 +29,7 @@
 				roundUpLabelSum: 'Total:',
 				chooseOptionLabel: 'Elegí tu respuesta...',
 				startGameLabel: 'Comenzar',
-				newRecordLabel: 'NUEVO RECORD'
+				newRecordLabel: 'Record del Día!'
 			}
 		},
 		_create: function(){
@@ -106,7 +107,9 @@
 			);
 			if(this.roundPoints > this.options.hiScore) {
 				//new record!
-				store.set('hiScore',this.roundPoints);
+				if(this.options.useStore) {
+					store.set('hiScore',this.roundPoints);
+				}
 				TweenMax.set(this.newRecordBadge,{autoAlpha:1});
 				tl.add(
 					TweenMax.to(score,3,{
@@ -376,7 +379,7 @@
 			$('div.title', this.startSplash).text(this.options.labels.title);
 			this.endSplash = $('#endSplash', this.gameSpace);
 			this.newRecordBadge = $('#newHiScoreBadge', this.endSplash);
-			this.newRecordBadge.text(this.options.labels.newRecordLabel);
+			$('p.label',this.newRecordBadge).text(this.options.labels.newRecordLabel);
 			this.errorSplash = $('#errorSplash', this.gameSpace);
 			this.errorSplash.message = $('p', this.errorSplash);
 
