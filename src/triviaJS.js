@@ -181,8 +181,11 @@
 				yoyo:true,
 				repeat:1,
 				autoAlpha:0,
+				onStart: function(){
+					$('<img />').attr('src','images/fondos/'+_this.preguntaActual.id + '.jpg');
+				},
 				onRepeat: function(){
-					_this.background.attr('src', 'images/fondos/'+_this.preguntaActual.id + '.jpg')
+					_this.background.attr('src', 'images/fondos/'+_this.preguntaActual.id + '.jpg');
 				}
 			}));
 			tl.add(TweenMax.to(this.questionBox,0.75,{delay: 0.25, autoAlpha:1}));
