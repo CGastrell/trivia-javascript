@@ -275,7 +275,7 @@ user-select: none;
   text-transform: none;
   text-shadow:0 5px 5px rgba(0,0,0,0.4);
   text-align: center;
-  margin-top: 2vw;
+  margin-top: 4vw;
   border:1px solid rgba(0,0,0,0.3);
   box-shadow:0 5px 5px rgba(0,0,0,0.4), inset 0 12px 10px -4.5px rgba(0,0,0,0.2);
   background-color: rgba(145, 42, 136, 0.5);
@@ -290,6 +290,10 @@ user-select: none;
   margin: 3vw 0;
 }
  #responseSplash .calificacion{
+  font-family: 'Rye', cursive;
+  font-size: 4vw;
+}
+ .result{
   font-family: 'Rye', cursive;
   font-size: 4vw;
 }
@@ -350,3 +354,47 @@ user-select: none;
   color: white;
 
 }
+
+
+.roundUpLabelQuestion{ 
+  text-align: left;
+  width:55%;
+  float:left;
+ font-size: 1vw;}
+.roundUpScoreQuestion{
+  width:45%;
+  float:right;
+  text-align:right;
+  font-family: 'Rye', cursive;
+  font-size: 2vw;
+  margin-bottom:1vw; }
+
+.roundUpLabelTimebonus{
+  text-align: left;
+  width:55%;
+  float:left;
+ font-size: 1vw;
+
+  margin-bottom:1vw;}
+.roundUpScoreTimebonus{
+  width:45%;
+  float:right;
+  text-align:right;
+  font-family: 'Rye', cursive;
+  font-size: 2vw;
+
+  margin-bottom:1vw;}
+
+.roundUpLabelSum{
+  text-align: left;
+  width:55%;
+  float:left;
+ font-size: 1vw;
+
+  margin-bottom:1vw;}
+.roundUpScoreSum{
+  width:45%;
+  float:right;
+  text-align:right;
+  font-family: 'Rye', cursive;
+  font-size: 2vw;}

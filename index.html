@@ -16,11 +16,15 @@
   <body>
     <div id="gameSpace">
       <img id="background" src="images/fondos/1.jpg" />
+      <div id="hiScoreBox" style="position:absolute;">
+        <span class="label"></span>
+        <span id="hiScore" style="text-align:right;"></span>
+      </div>
       <div id="questionBox">
         <p id="consigna"></p>
         <div class="cta">
           <div class="izq"></div>
-          <div class="centro"><p>Elige tu respuesta...</p></div>
+          <div class="centro"><p class="label"></p></div>
           <div class="der"></div>
         </div>
       </div>
@@ -28,7 +32,7 @@
         <div class="izq"></div>
         <div class="centro"></div>
         <div class="der"></div>
-        <div class="numcontainer" id="numeroPregunta"></div>
+        <div class="numcontainer" id="questionBadge"></div>
       </div>
 
       <div class="respuesta" id="opcion1" data-index="0">
@@ -51,24 +55,31 @@
       </div>
 
       <div id="responseSplash">
-        <p class="calificacion"></p>
-        <p class="remate"></p>
-        <div class="roundUp" style="width:50%;margin: 30px auto;">
-          <span class="roundUpLabel" style="width:45%;inline-block;float:left;"></span>
-          <span class="roundUpScore" style="width:45%;inline-block;float:right;text-align:right;"></span>
+        <p class="result"></p>
+        <p class="resultTip"></p>
+        <div class="roundUp" style="width:30%;margin: 30px auto;">
+          <p class="roundUpLabelHeader"></p>
+          <span class="roundUpLabelQuestion" style="text-align: left;width:45%;inline-block;float:left;"></span>
+          <span class="roundUpScoreQuestion" style="width:45%;inline-block;float:right;text-align:right;"></span>
+          <br style="clear:both" />
+          <span class="roundUpLabelTimebonus" style="text-align: left;width:45%;inline-block;float:left;"></span>
+          <span class="roundUpScoreTimebonus" style="width:45%;inline-block;float:right;text-align:right;"></span>
+          <br style="clear:both" />
+          <span class="roundUpLabelSum" style="text-align: left;width:45%;inline-block;float:left;"></span>
+          <span class="roundUpScoreSum" style="width:45%;inline-block;float:right;text-align:right;"></span>
         </div>
-        <div class="cta" style="clear:both">
+        <div class="cta next" style="clear:both">
           <div class="izq"></div>
-          <div class="centro"><p>Clicka para continuá</p></div>
+          <div class="centro"><p class="label"></p></div>
           <div class="der"></div>
         </div>
       </div>
 
       <div id="startSplash">
-        <div class="title">Geo Trivia IGN</div>
+        <div class="title"></div>
         <div class="cta" style="margin-top: 13vw;">
           <div class="izq"></div>
-          <div class="centro"><p>Comenzar</p></div>
+          <div class="centro"><p class="label"></p></div>
           <div class="der"></div>
         </div>
       </div>
@@ -76,11 +87,17 @@
       <div id="endSplash">
         <div class="finalScoreLabel">Tu puntaje final es:</div>
         <div class="finalScore"></div>
+        <div id="newHiScoreBadge"></div>
       </div>
 
       <div id="errorSplash">
         <h1>ERROR!</h1>
         <p></p>
+      </div>
+      <div style="width:100%; bottom:0; position:absolute;">
+        <div class="izqbtm"></div>
+        <div class="centrobtm"></div>
+        <div class="derbtm"></div>
       </div>
 
       
@@ -90,14 +107,15 @@
     <script src="lib/jquery-1.11.0.min.js"></script>
     <script src="lib/jquery.ui.widget.min.js"></script>
     <script src="lib/TweenMax-1.11.4.min.js"></script>
+    <script src="lib/store+json2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed
     <script src="lib/bootstrap.min.js"></script>
     -->
 
-    <script src="triviaJS.min.js"></script>
+    <script src="src/triviaJS.js"></script>
     <script>
     $(document).ready(function(){
-      $('body').trivia({preguntasUrl:'triviafile.json'});
+      $('body').trivia({record:321,questionsFileUrl:'triviafile.json',questionsPerGame:10});
     })
     </script>
 
