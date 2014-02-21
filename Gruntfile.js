@@ -37,6 +37,9 @@ module.exports = function(grunt) {
             }
         },
         concat: {
+            options: {
+                separator: ';',
+            },
             basic: {
                 src: [
                     'lib/jquery-1.11.0.min.js',
