@@ -338,7 +338,6 @@
 			}
 		},
 		_setupSlideshow: function() {
-			var _this = this;
 			if(this.options.slideShowInterval < 1) {
 				this.slideShow = {
 					resume: function(){},
@@ -411,7 +410,7 @@
 				this.errorSplash
 			],{autoAlpha:0});
 
-			this.startSplash.click(function(e){
+			this.startSplash.click(function(){
 				_this.startGame();
 				return false;
 			});
@@ -443,7 +442,7 @@
 				.html("<h1>Trivia IGN</h1>")
 				.appendTo(this.element);
 			this.startButton = $('<a href="#">Comenzar</a>')
-				.click(function(e){
+				.click(function(){
 					_this.startGame();
 					return false;
 				}).appendTo(this.startSplash);
