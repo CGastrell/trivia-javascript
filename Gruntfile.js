@@ -30,14 +30,16 @@ module.exports = function(grunt) {
                 TweenLite: true,
                 Back: true,
                 Power4: true,
-                TweenMax: true
+                TweenMax: true,
+		store: true,
+		Elastic: true
             }
         }
     },
     uglify: {
       options: {
         report: 'min',
-        compress: false,
+        compress: true,
         join_vars: true,
         unsafe: false,
         mangle: {
@@ -48,7 +50,9 @@ module.exports = function(grunt) {
             "TweenLite",
             "Back",
             "Power4",
-            "TweenMax"
+            "TweenMax",
+		"Elastic",
+		"store"
           ]
         },
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
