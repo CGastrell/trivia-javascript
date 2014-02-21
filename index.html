@@ -16,6 +16,7 @@
   <body>
     <div id="gameSpace">
       <img id="background" src="images/fondos/1.jpg" />
+      <div id="bg"></div>
       <div id="hiScoreBox" style="position:absolute;">
         <span class="label"></span>
         <span id="hiScore" style="text-align:right;"></span>
@@ -87,7 +88,13 @@
       <div id="endSplash">
         <div class="finalScoreLabel">Tu puntaje final es:</div>
         <div class="finalScore"></div>
-        <div id="newHiScoreBadge"></div>
+        <div id="newHiScoreBadge">
+          <div class="cta next" style="clear:both">
+            <div class="izq"></div>
+            <div class="centro"><p class="label"></p></div>
+            <div class="der"></div>
+          </div>
+        </div>
       </div>
 
       <div id="errorSplash">
@@ -115,7 +122,7 @@
     <script src="src/triviaJS.js"></script>
     <script>
     $(document).ready(function(){
-      $('body').trivia({record:321,questionsFileUrl:'triviafile.json',questionsPerGame:10});
+      $('body').trivia({questionsFileUrl:'triviafile.json',questionsPerGame:1});
     })
     </script>
 
