@@ -293,6 +293,10 @@ user-select: none;
   font-family: 'Rye', cursive;
   font-size: 4vw;
 }
+ .result{
+  font-family: 'Rye', cursive;
+  font-size: 4vw;
+}
 .respuesta {
   position: absolute;
   top: 67%;
@@ -350,3 +354,47 @@ user-select: none;
   color: white;
 
 }
+
+
+.roundUpLabelQuestion{ 
+  text-align: left;
+  width:55%;
+  float:left;
+ font-size: 1vw;}
+.roundUpScoreQuestion{
+  width:45%;
+  float:right;
+  text-align:right;
+  font-family: 'Rye', cursive;
+  font-size: 2vw;
+  margin-bottom:1vw; }
+
+.roundUpLabelTimebonus{
+  text-align: left;
+  width:55%;
+  float:left;
+ font-size: 1vw;
+
+  margin-bottom:1vw;}
+.roundUpScoreTimebonus{
+  width:45%;
+  float:right;
+  text-align:right;
+  font-family: 'Rye', cursive;
+  font-size: 2vw;
+
+  margin-bottom:1vw;}
+
+.roundUpLabelSum{
+  text-align: left;
+  width:55%;
+  float:left;
+ font-size: 1vw;
+
+  margin-bottom:1vw;}
+.roundUpScoreSum{
+  width:45%;
+  float:right;
+  text-align:right;
+  font-family: 'Rye', cursive;
+  font-size: 2vw;}
