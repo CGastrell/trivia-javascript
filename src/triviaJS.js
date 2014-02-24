@@ -1,5 +1,6 @@
 (function($) {
-	$.widget("ign.trivia",{
+	$.widget("cg.trivia",{
+		widgetEventPrefix: "trivia:",
 		width: 0,
 		height: 0,
 		roundPoints: 0,
@@ -17,19 +18,20 @@
 			questionsFileUrl: "",
 			slideShowInterval: 5,
 			labels: {
-				hiScoreLabel: "Record del día: ",
+				hiScore: "Record del día: ",
 				title: "Geo Trivia IGN",
 				playerScore: "PUNTOS: ",
-				roundUpLabelHeader: "Puntos",
-				roundUpLabelQuestion: "Respuesta correcta:",
-				roundUpLabelTimebonus: "Bonus por tiempo:",
+				roundUpHeader: "Puntos",
+				roundUpQuestion: "Respuesta correcta:",
+				roundUpTimebonus: "Bonus por tiempo:",
+				roundUpSum: 'Total:',
 				responseOkText: "CORRECTO!",
 				responseFailText: "INCORRECTO!",
 				nextQuestion: 'Continuar',
-				roundUpLabelSum: 'Total:',
-				chooseOptionLabel: 'Elegí tu respuesta...',
-				startGameLabel: 'Comenzar',
-				newRecordLabel: 'Record del Día!'
+				chooseOption: 'Elegí tu respuesta...',
+				startGame: 'Comenzar',
+				newRecord: 'Record del Día!',
+				finalScore: 'Tu puntaje final es: '
 			}
 		},
 		_create: function(){
@@ -51,7 +53,7 @@
 			).then(
 				function(data){
 					if(data[_this.options.questionsArrayName] === undefined) {
-						_this._showError('no se encontro el item "preguntas"');
+						_this._triggerError('no se encontro el item "preguntas"');
 						return false;
 					}
 					_this.options.questions = data[_this.options.questionsArrayName].slice();
@@ -59,7 +61,7 @@
 				},
 				function(){
 					if( $.isEmptyObject(_this.options.questions) ) {
-						_this._showError('no se pudo cargar el archivo de preguntas y no se suministraron preguntas');
+						_this._triggerError('no se pudo cargar el archivo de preguntas y no se suministraron preguntas');
 					}
 				}
 			);//.done(function(){console.log('done')});
@@ -143,13 +145,12 @@
 				this._showEndSplash();
 				return;
 			}
-
 			var _this = this;
 			var rr = Math.random() * this.roundQuestions.length << 0;
 			this.preguntaActual = this.roundQuestions.splice(rr, 1)[0];
 			
 			TweenMax.set([
-				this.questionLabel,
+				this.questionBadge,
 				this.option1,
 				this.option2,
 				this.option3
@@ -161,9 +162,9 @@
 			this.option2.find('p').first().text(respuestas[1]);
 			this.option3.find('p').first().text(respuestas[2]);
 
-			this.questionLabel.text("#" + String(_this.options.questionsPerGame - _this.roundQuestions.length));
+			this.questionBadge.text("#" + String(_this.options.questionsPerGame - _this.roundQuestions.length));
 
-			this.questionBox.find('#consigna').first().text(this.preguntaActual.consigna);
+			this.questionBox.find('#question').first().text(this.preguntaActual.consigna);
 
 			var responder = function() {
 				_this._processResponse($(this).find('p').first().text());
@@ -176,7 +177,7 @@
 			}
 
 			var tl = new TimelineMax({onComplete:hookRespuestas});
-			tl.add(TweenMax.from(this.questionLabel, 1.5, {delay: 0.25, autoAlpha: 0, scale:3, ease: Power4.easeIn}));
+			tl.add(TweenMax.from(this.questionBadge, 1.5, {delay: 0.25, autoAlpha: 0, scale:3, ease: Power4.easeIn}));
 			tl.add(TweenMax.to(this.background,0.5,{
 				yoyo:true,
 				repeat:1,
@@ -238,7 +239,7 @@
 				TweenMax.staggerTo(
 					[
 						this.questionBox,
-						this.questionLabel,
+						this.questionBadge,
 						this.option1,
 						this.option2,
 						this.option3
@@ -332,11 +333,6 @@
 			TweenMax.set(this.startSplash,{scale:1,autoAlpha:0});
 			TweenMax.to(this.startSplash,0.5,{autoAlpha:1});
 		},
-		_zOrder: function(boxesArray) {
-			for(var ii=0; ii < boxesArray.length; ii++) {
-				boxesArray[ii].css('z-index',ii + 20);
-			}
-		},
 		_setupSlideshow: function() {
 			if(this.options.slideShowInterval < 1) {
 				this.slideShow = {
@@ -364,124 +360,121 @@
 			});
 		},
 		_setUpGameSpace: function() {
+			if(!this.options.useTemplate) {
+				this._buildGameSpace();
+			}
 			var _this = this;
 			this.gameSpace = $('#gameSpace', this.element);
-			$('span.label', "#hiScoreBox").text(this.options.labels.hiScoreLabel);
-			$('#hiScore', this.gameSpace).text(this.options.hiScore);
+			$('span.hiScoreLabel', "#hiScoreBox").text(this.options.labels.hiScore);
+			$('#hiScore', "#hiScoreBox").text(this.options.hiScore);
+
 			this.background = $('#background', this.gameSpace);
 			this.questionBox = $('#questionBox', this.gameSpace);
-			$('p.label', this.questionBox).text(this.options.labels.chooseOptionLabel);
-			this.questionLabel = $('#questionLabel > #questionBadge', this.gameSpace);
-			this.option1 = $('#opcion1', this.gameSpace);
-			this.option2 = $('#opcion2', this.gameSpace);
-			this.option3 = $('#opcion3', this.gameSpace);
+			$('p.chooseOptionLabel', this.questionBox).text(this.options.labels.chooseOption);
+
+			this.questionBadge = $('#questionBadge', this.gameSpace);
+			this.option1 = $('#option1', this.gameSpace);
+			this.option2 = $('#option2', this.gameSpace);
+			this.option3 = $('#option3', this.gameSpace);
+
 			this.responseSplash = $('#responseSplash', this.gameSpace);
+
 			this.startSplash = $('#startSplash', this.gameSpace);
-			$('p.label', this.startSplash).text(this.options.labels.startGameLabel);
-			$('div.title', this.startSplash).text(this.options.labels.title);
+			$('p.startLabel', this.startSplash).text(this.options.labels.startGame);
+			$('.title', this.startSplash).text(this.options.labels.title);
+
 			this.endSplash = $('#endSplash', this.gameSpace);
 			this.newRecordBadge = $('#newHiScoreBadge', this.endSplash);
-			$('p.label',this.newRecordBadge).text(this.options.labels.newRecordLabel);
-			this.errorSplash = $('#errorSplash', this.gameSpace);
-			this.errorSplash.message = $('p', this.errorSplash);
-
+			$('.finalScoreLabel', this.endSplash).text(this.options.labels.finalScore);
+			$('p.newHiScoreLabel',this.newRecordBadge).text(this.options.labels.newRecord);
 
 			this.roundUpDiv = $('.roundUp',this.responseSplash);
-			$('.roundUpLabelQuestion', this.roundUpDiv).text(this.options.labels.roundUpLabelQuestion);
-			$('.roundUpLabelTimebonus', this.roundUpDiv).text(this.options.labels.roundUpLabelTimebonus);
-			$('.roundUpLabelHeader', this.roundUpDiv).text(this.options.labels.roundUpLabelHeader);
-			$('.roundUpLabelSum', this.roundUpDiv).text(this.options.labels.roundUpLabelSum);
-			$('p.label', this.responseSplash).text(this.options.labels.nextQuestion);
-			this.questionBox.outerWidth(this.width);
-
-			this._center(this.errorSplash, this.element);
-			this._center(this.questionLabel, null, true);
+			$('.roundUpLabelQuestion', this.roundUpDiv).text(this.options.labels.roundUpQuestion);
+			$('.roundUpLabelTimebonus', this.roundUpDiv).text(this.options.labels.roundUpTimebonus);
+			$('.roundUpLabelHeader', this.roundUpDiv).text(this.options.labels.roundUpHeader);
+			$('.roundUpLabelSum', this.roundUpDiv).text(this.options.labels.roundUpSum);
+			$('p.nextLabel', this.responseSplash).text(this.options.labels.nextQuestion);
 
 			TweenMax.set([
 				this.endSplash,
 				this.newRecordBadge,
 				this.startSplash,
-				this.questionLabel,
+				this.questionBadge,
 				this.questionBox,
 				this.option1,
 				this.option2,
 				this.option3,
-				this.responseSplash,
-				this.errorSplash
+				this.responseSplash
 			],{autoAlpha:0});
+
+			this._trigger('gameSpaceReady', null, this);
 
 			this.startSplash.click(function(){
 				_this.startGame();
 				return false;
 			});
 		},
-		_crearEspacioDeJuego: function() {
+		_buildGameSpace: function() {
 			var _this = this;
+			this.html("");
 			this.gameSpace = $('<div id="gameSpace" />')
 				.appendTo(this.element);
 
+			this.gameSpace.append(
+				$('<div id="hiScoreBox" />')
+					.append('<span class="hiScoreLabel" />')
+					.append('<span id="hiScore" />')
+			);
+
 			this.questionBox = $('<div id="questionBox" />')
+				.append('<p class="chooseOptionLabel" />')
 				.appendTo(this.gameSpace);
 
-			this.questionLabel = $('<div id="questionLabel" />')
+			this.questionBadge = $('<div id="questionBadge" />')
 				.appendTo(this.gameSpace);
 
 			// this.optionsContainer = $('<div id="optionsContainer" />')
 				// .appendTo(this.gameSpace);
-			this.option1 = $('<div class="respuesta opcion1" data-index="0" />')
+			this.option1 = $('<div id="option1" />')
 				.appendTo(this.gameSpace);
-			this.option2 = $('<div class="respuesta opcion2" data-index="1" />')
+			this.option2 = $('<div id="option2" />')
 				.appendTo(this.gameSpace);
-			this.option3 = $('<div class="respuesta opcion3" data-index="2" />')
+			this.option3 = $('<div id="option3" />')
 				.appendTo(this.gameSpace);
 
+			var roundUp = ('<div class="roundUp" />');
+			roundUp.append('<p class="roundUpLabelHeader" />');
+			roundUp.append('<span class="roundUpLabelQuestion" />');
+			roundUp.append('<span class="roundUpScoreQuestion" />');
+			roundUp.append('<span class="roundUpLabelTimebonus" />');
+			roundUp.append('<span class="roundUpScoreTimebonus" />');
+			roundUp.append('<span class="roundUpLabelSum" />');
+			roundUp.append('<span class="roundUpScoreSum" />');
+
 			this.responseSplash = $('<div id="responseSplash" />')
+				.append('<p class="result" />')
+				.append('<p class="resultTip" />')
+				.append(roundUp)
+				.append('<p class="nextLabel" />')
 				.appendTo(this.gameSpace);
 
 			this.startSplash = $('<div id="startSplash" />')
-				.html("<h1>Trivia IGN</h1>")
+				.append('<div class="title" />')
+				.append('<p class="startLabel" />')
 				.appendTo(this.element);
-			this.startButton = $('<a href="#">Comenzar</a>')
-				.click(function(){
-					_this.startGame();
-					return false;
-				}).appendTo(this.startSplash);
-
+				
 			this.endSplash = $('<div id="endSplash" />').appendTo(this.element);
 
-			this.errorSplash = $('<div id="errorSplash" />')
-				.css({
-					border: '2px solid yellow',
-					position: 'absolute',
-					background: 'red',
-					width: '50%',
-					height: '50%',
-					'text-align': 'center',
-					'font-size': '20px',
-					color: 'white'
-				})
-				.appendTo(this.element).append($('<h1>ERROR!</h1>'));
-			this.errorSplash.message = $('<p />').appendTo(this.errorSplash);
-
-			this._center(this.element,this.errorSplash);
-			this._center(null, this.questionLabel, true);
-
-			TweenMax.set([
-				this.endSplash,
-				this.startSplash,
-				this.questionLabel,
-				this.questionBox,
-				this.option1,
-				this.option2,
-				this.option3,
-				this.responseSplash,
-				this.errorSplash
-			],{autoAlpha:0});
+			this._trigger('gamespace_built', null, this);
 		},
-		_showError: function(msg) {
-			console.log('error: ' + msg);
-			this.errorSplash.message.text(msg);
-			TweenMax.set(this.errorSplash, {autoAlpha:1});
+		_triggerError: function(msg) {
+			var err = {
+				message: msg
+			}
+			this._trigger('error',err);
+			// console.log('error: ' + msg);
+			// this.errorSplash.message.text(msg);
+			// TweenMax.set(this.errorSplash, {autoAlpha:1});
 		},
 		_center: function(client, container, horizontalOnly) {
 			if(container === null || container === undefined) {
@@ -492,6 +485,6 @@
 				left: (container.innerWidth() - client.outerWidth()) /2
 			}
 			client.offset(n);
-		},
+		}
 	});
 })(jQuery);

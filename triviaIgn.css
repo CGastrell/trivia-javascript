@@ -57,13 +57,17 @@ user-select: none;
   border-right: none;
   padding: 2%;
 }
+#decoBottom {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
 }
-#questionLabel {
+#decoTop {
   height: 7.2vw;
   pointer-events: none;
 }
 
-#questionLabel .centro {
+#decoTop .centro {
   background-image:url(images/ribete.png);
   background-position: 50% 0;
   background-repeat: no-repeat;
@@ -74,7 +78,7 @@ user-select: none;
   position: absolute;
 }
 
-#questionLabel .izq {
+#decoTop .izq {
   background-image: url(images/ribetei.png);
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -86,7 +90,7 @@ user-select: none;
   position: absolute; 
 }
 
-#questionLabel .der{
+#decoTop .der{
   background-image:url(images/ribeted.png);
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -135,7 +139,7 @@ user-select: none;
 
 
 
-#questionLabel .numcontainer{
+#questionBadge {
   background: url(images/estampa.png) 0 0 no-repeat;
   background-size: 100%;
   position: absolute;
@@ -180,7 +184,7 @@ user-select: none;
   padding: 2%;
   pointer-events: none;
 }
-#questionBox > #consigna {
+#questionBox > #question {
   font-size: 4vw;
   font-family: 'Fjalla One', sans-serif;
   font-weight: normal;
@@ -233,7 +237,7 @@ user-select: none;
   min-width: 10vw;
   max-width: 30vw;
 }
-.cta .centro p {
+p.nextLabel, p.chooseOptionLabel, p.startLabel, p.newHiScoreLabel {
   color:rgba(145, 42, 136, 1);
   padding: 2vw 0;
   font-size:3vw;
@@ -289,11 +293,7 @@ user-select: none;
   font-size: 7vw;
   margin: 3vw 0;
 }
- #responseSplash .calificacion{
-  font-family: 'Rye', cursive;
-  font-size: 4vw;
-}
- .result{
+ #responseSplash .result {
   font-family: 'Rye', cursive;
   font-size: 4vw;
 }
@@ -338,9 +338,9 @@ user-select: none;
   margin-bottom: 1%;
 }
 
-#opcion1 {left: 6%;}
-#opcion2 {left: 37%;}
-#opcion3 {left: 68%;}
+#option1 {left: 6%;}
+#option2 {left: 37%;}
+#option3 {left: 68%;}
 
 
 #errorSplash {
@@ -355,7 +355,10 @@ user-select: none;
 
 }
 
-
+.roundUp {
+  width: 30%;
+  margin: 30px auto;
+}
 .roundUpLabelQuestion{ 
   text-align: left;
   width:55%;
