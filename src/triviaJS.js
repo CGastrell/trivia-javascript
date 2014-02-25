@@ -18,20 +18,20 @@
 			questionsFileUrl: "",
 			slideShowInterval: 5,
 			labels: {
-				hiScore: "Record del día: ",
-				title: "Geo Trivia IGN",
-				playerScore: "PUNTOS: ",
-				roundUpHeader: "Puntos",
-				roundUpQuestion: "Respuesta correcta:",
-				roundUpTimebonus: "Bonus por tiempo:",
+				hiScore: "Hi Score: ",
+				title: "Trivia JS",
+				playerScore: "Round Up: ",
+				roundUpHeader: "Score",
+				roundUpQuestion: "Knowledge:",
+				roundUpTimebonus: "Time bonus:",
 				roundUpSum: 'Total:',
-				responseOkText: "CORRECTO!",
-				responseFailText: "INCORRECTO!",
-				nextQuestion: 'Continuar',
-				chooseOption: 'Elegí tu respuesta...',
-				startGame: 'Comenzar',
-				newRecord: 'Record del Día!',
-				finalScore: 'Tu puntaje final es: '
+				responseOkText: "RIGHT ON!",
+				responseFailText: "FAIL!",
+				nextQuestion: 'Next',
+				chooseOption: 'Choose wisely...',
+				startGame: 'Start',
+				newRecord: 'New Hi Score!',
+				finalScore: 'Final Score: '
 			}
 		},
 		_create: function(){
@@ -53,7 +53,7 @@
 			).then(
 				function(data){
 					if(data[_this.options.questionsArrayName] === undefined) {
-						_this._triggerError('no se encontro el item "preguntas"');
+						_this._triggerError('Item "'+_this.options.questionsArrayName+'" not found in provided questions file');
 						return false;
 					}
 					_this.options.questions = data[_this.options.questionsArrayName].slice();
@@ -61,7 +61,7 @@
 				},
 				function(){
 					if( $.isEmptyObject(_this.options.questions) ) {
-						_this._triggerError('no se pudo cargar el archivo de preguntas y no se suministraron preguntas');
+						_this._triggerError('Could not load a questions file and no questions were supplied in options:questions');
 					}
 				}
 			);//.done(function(){console.log('done')});
@@ -156,7 +156,7 @@
 				this.option3
 			], {autoAlpha: 1, scale: 1});
 
-			var respuestas = this._shuffleArray(this.preguntaActual.opciones);
+			var respuestas = this._shuffleArray(this.preguntaActual.options);
 
 			this.option1.find('p').first().text(respuestas[0]);
 			this.option2.find('p').first().text(respuestas[1]);
@@ -164,8 +164,9 @@
 
 			this.questionBadge.text("#" + String(_this.options.questionsPerGame - _this.roundQuestions.length));
 
-			this.questionBox.find('#question').first().text(this.preguntaActual.consigna);
-
+			this.questionBox.find('#question').first().text(this.preguntaActual.question);
+			//all set, trigger!
+			this._trigger('beforeShowQuestion',null,{question:this.preguntaActual,instance:this});
 			var responder = function() {
 				_this._processResponse($(this).find('p').first().text());
 			}
@@ -174,10 +175,11 @@
 				_this.option2.on('click', responder);
 				_this.option3.on('click', responder);
 				_this.questionStartTime = new Date();
+				_this._trigger('afterShowQuestion',null,{question:this.preguntaActual,instance:_this});
 			}
 
 			var tl = new TimelineMax({onComplete:hookRespuestas});
-			tl.add(TweenMax.from(this.questionBadge, 1.5, {delay: 0.25, autoAlpha: 0, scale:3, ease: Power4.easeIn}));
+			tl.add(TweenMax.from(this.questionBadge, 1, {delay: 0.25, autoAlpha: 0, scale:3, ease: Power4.easeIn}));
 			tl.add(TweenMax.to(this.background,0.5,{
 				yoyo:true,
 				repeat:1,
@@ -189,7 +191,7 @@
 					_this.background.attr('src', 'images/fondos/'+_this.preguntaActual.id + '.jpg');
 				}
 			}));
-			tl.add(TweenMax.to(this.questionBox,0.75,{delay: 0.25, autoAlpha:1}));
+			tl.add(TweenMax.to(this.questionBox,0.75,{delay: 0, autoAlpha:1}));
 			tl.add(
 				TweenMax.staggerFrom(
 					[
@@ -206,7 +208,7 @@
 		_showRoundUpSplash: function(questionPoints, timePoints) {
 			var _this = this;
 			this.responseSplash.find('p.result').first().text(questionPoints > 0 ? this.options.labels.responseOkText : this.options.labels.responseFailText);
-			this.responseSplash.find('p.resultTip').first().text(this.preguntaActual.remate);
+			this.responseSplash.find('p.resultTip').first().text(this.preguntaActual.answerTip);
 
 			var roundUpLabelQuestion = $('.roundUpLabelQuestion', this.roundUpDiv);
 			var roundUpLabelTimebonus = $('.roundUpLabelTimebonus', this.roundUpDiv);
@@ -215,7 +217,7 @@
 			var roundUpLabelHeader = $('.roundUpLabelHeader', this.roundUpDiv);
 			var roundUpLabelSum = $('.roundUpLabelSum', this.roundUpDiv);
 			var roundUpScoreSum = $('.roundUpScoreSum', this.roundUpDiv);
-			var next = $('.next', this.responseSplash);
+			var next = $('.nextContainer', this.responseSplash);
 
 			roundUpScoreQuestion.text("0");
 			roundUpScoreTimebonus.text("0");
@@ -295,12 +297,12 @@
 			}
 			tl.add(TweenMax.from(next,0.5,{autoAlpha:0}),"+=0.25");
 		},
-		_processResponse: function(respuesta) {
+		_processResponse: function(answer) {
 			this.questionEndTime = new Date();
 			this.option1.off('click');
 			this.option2.off('click');
 			this.option3.off('click');
-			var correcto = respuesta === this.preguntaActual.respuesta;
+			var correcto = answer === this.preguntaActual.correctAnswer;
 
 			var tiempo = this.questionEndTime - this.questionStartTime;
 			var timePoints = this.options.secondsPerQuestion * 1000 - tiempo;
@@ -320,6 +322,7 @@
 		},
 		_showStartSplash: function() {
 			this.slideShow.resume();
+			var _this = this;
 			TweenMax.staggerTo(
 				[
 					this.endSplash,
@@ -328,10 +331,16 @@
 					this.option3,
 					this.responseSplash,
 					this.newRecordBadge
-				],0.5,{autoAlpha:0}
+				],0.5,
+				{
+					autoAlpha:0,
+					onComplete: function() {
+						TweenMax.set(_this.startSplash,{scale:1,autoAlpha:0});
+						TweenMax.to(_this.startSplash,0.5,{autoAlpha:1});
+						_this._trigger('gameReady',null,{instance:_this});
+					}
+				}
 			);
-			TweenMax.set(this.startSplash,{scale:1,autoAlpha:0});
-			TweenMax.to(this.startSplash,0.5,{autoAlpha:1});
 		},
 		_setupSlideshow: function() {
 			if(this.options.slideShowInterval < 1) {
@@ -407,7 +416,7 @@
 				this.responseSplash
 			],{autoAlpha:0});
 
-			this._trigger('gameSpaceReady', null, this);
+			this._trigger('gameSpaceReady', null, {instance:this});
 
 			this.startSplash.click(function(){
 				_this.startGame();
@@ -459,7 +468,7 @@
 				.append('<p class="result" />')
 				.append('<p class="resultTip" />')
 				.append(roundUp)
-				.append('<p class="nextLabel" />')
+				.append('<div class="nextContainer"><p class="nextLabel" /></div>')
 				.appendTo(this.gameSpace);
 
 			this.startSplash = $('<div id="startSplash" />')

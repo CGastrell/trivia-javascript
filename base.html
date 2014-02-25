@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Trivia JS</title>
+		<link rel="stylesheet" href="base.css">
+		<style>
+			html, body, div {
+				border:0;
+				padding:0;
+				margin:0;
+			}
+			html,body {
+				height:100%;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="lib/jquery-1.11.0.min.js"></script>
+		<script src="lib/jquery.ui.widget.min.js"></script>
+		<script src="lib/TweenMax-1.11.4.min.js"></script>
+		<script src="lib/store+json2.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed
+		<script src="lib/bootstrap.min.js"></script>
+		-->
+
+		<script src="src/triviaJS.js"></script>
+		<script>
+		$(document).ready(function(){
+			$('body').trivia({
+				useTemplate: false,
+				questionsFileUrl:'triviafile.json',
+				questionsPerGame:1,
+				'gameSpaceReady': function(evt,data) {
+					data.instance.questionBox.outerWidth(data.instance.width);
+					data.instance._center(data.instance.startSplash);
+					data.instance._center(data.instance.endSplash);
+				},
+				'beforeShowQuestion': function(evt,data) {
+					data.instance._center(data.instance.questionBadge,null,true);
+				}
+			});
+		})
+		</script>
+
+	</body>
+</html>

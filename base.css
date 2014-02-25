@@ -1,12 +1,4 @@
-html, body, div {
-  border:0;
-  padding:0;
-  margin:0;
-}
-html,body {
-  height:100%;
-}
-div, p {
+#gameSpace div, #gameSpace p {
 -webkit-touch-callout: none;
 -webkit-user-select: none;
 -khtml-user-select: none;
@@ -15,194 +7,142 @@ div, p {
 user-select: none;
 }
 #gameSpace {
-  /*
-  background: url(images/fondos/1.jpg) 0 0 no-repeat;
-  background-attachment: fixed;
-  background-size: 100% ;
-  */
-  background: black;
-  min-height: 100%;
+  font-size: 5vh;
+}
+#gameSpace {
   width: 100%;
-  position: relative;
   height: 100%;
+  position: relative;
   overflow: hidden;
+  background-color:#222;
 }
-#gameSpace #background {
-  min-height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+#hiScoreBox{
+  position:absolute;
+  text-align: right;
+  top: 2%;
+  color:white;
+  font-size: 75%;
+  left: 70%;
 }
+
+#hiScore{
+  color: yellow;
+}
+
 #startSplash, #endSplash {
-  width: 100%;
   position: absolute;
-  top: 125px;
-  left:0;
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: normal;
+  width: 50%;
+  /*height: 50%;*/
+  top: 25%;
+  left: 25%;
   text-rendering: optimizelegibility;
-  color: rgb(231, 247, 255);
-  padding: 10px;
-  line-height: 1.2vw;
-  text-transform: none;
-  text-shadow:0 5px 5px rgba(0,0,0,0.4);
+  color: white;
   text-align: center;
-  margin-top: 2vw;
-  border:1px solid rgba(0,0,0,0.3);
-  box-shadow:0 5px 5px rgba(0,0,0,0.4), inset 0 12px 10px -4.5px rgba(0,0,0,0.2);
-  background-color: rgba(145, 42, 136, 0.5);
+  background-color: orange;
   border: 1px solid rgba(255,255,255,0.2);
-  border-left: none;
-  border-right: none;
-  padding: 2%;
 }
-#decoBottom {
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-}
-#decoTop {
-  height: 7.2vw;
-  pointer-events: none;
-}
-
-#decoTop .centro {
-  background-image:url(images/ribete.png);
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  background-size:cover;
-  width: 14vw;
-  height: 7.2vw;
-  left: 43%;
-  position: absolute;
-}
-
-#decoTop .izq {
-  background-image: url(images/ribetei.png);
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size:cover;
-  width: 4vw;
-  height: 4vw;
-  margin-bottom: 1%;
-  left: 0;
-  position: absolute; 
-}
-
-#decoTop .der{
-  background-image:url(images/ribeted.png);
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size:cover;
-  width: 4vw;
-  height: 4vw;
-  right: 0;
-  position: absolute;
-}
-
-.centrobtm {
-  background-image:url(images/ribetebtm.png);
-  background-position: 50% bottom;
-  background-repeat: no-repeat;
-  background-size:cover;
-  width: 8vw;
-  height: 4vw;
-  left: 42%;
-  position: relative;
-  float:left;
-}
-
-.izqbtm {
-  background-image: url(images/ribeteibtm.png);
-  background-position: 0 bottom;
-  background-repeat: no-repeat;
-  background-size:cover;
-  width: 4vw;
-  height: 4vw;
-  left: 0;
-  position: relative; 
-  float:left;
-}
-
-.derbtm{
-  background-image:url(images/ribetedbtm.png);
-  background-position: 0 bottom;
-  background-repeat: no-repeat;
-  background-size:cover;
-  width: 4vw;
-  height: 4vw;
-  right: 0;
-  position: relative;
-  float:right;
-}
-
-
-
 #questionBadge {
-  background: url(images/estampa.png) 0 0 no-repeat;
-  background-size: 100%;
   position: absolute;
   left: 45%;
-  top: 2vw;
-  width: 10%;
-  /*height: 23%;*/
-  color: rgba(145, 42, 136, 1);
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: normal;
-  font-size: 4vw;
+  top: 2%;
+  color: white;
+  font-size: 1em;
   text-rendering: optimizelegibility;
-  line-height: 10vw;
   text-align: center;
-  padding:0;
+  border-radius: 5vw;
+  background-color: #111;
+  padding: 2vw;
 }
 
 #questionBox {
-  /*width: 100%;*/
   position: absolute;
-  /*background-color: blue;*/
-  top: 125px;
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: normal;
+  margin-top: 12vh;
   text-rendering: optimizelegibility;
-  color: rgb(231, 247, 255);
-  /*background: #d8d8d8;
-  background: rgba(100, 0, 72, 0.52);
-  box-shadow: 12px 0 0 0 rgba(100, 0, 72, 0.52),-12px 0 0 0 rgba(100, 0, 72, 0.52);*/
-  padding: 10px;
+  color: white;
   line-height: 4vw;
-  text-transform: none;
-  text-shadow:0 5px 5px rgba(0,0,0,0.4);
   text-align: center;
-  margin-top: 2vw;
-
-  border:1px solid rgba(0,0,0,0.3);
-  box-shadow:0 5px 5px rgba(0,0,0,0.4), inset 0 12px 10px -4.5px rgba(0,0,0,0.2);
-  background-color: rgba(145, 42, 136, 0.5);
+  background-color: grey;
   border: 1px solid rgba(255,255,255,0.2);
-  border-left: none;
-  border-right: none;
-  padding: 2%;
   pointer-events: none;
 }
-#questionBox > #question {
-  font-size: 4vw;
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: normal;
+#responseSplash {
+  position: absolute;
+  margin-top: 12vh;
   text-rendering: optimizelegibility;
-  color: rgb(231, 247, 255);
-  /*background: #d8d8d8;
-  background: rgba(100, 0, 72, 0.52);
-  box-shadow: 12px 0 0 0 rgba(100, 0, 72, 0.52),-12px 0 0 0 rgba(100, 0, 72, 0.52);*/
-  padding: 10px;
-  line-height: 4.5vw;
-  text-transform: none;
-  text-shadow:0 5px 5px rgba(0,0,0,0.4);
+  color: white;
+  line-height: 4vw;
   text-align: center;
-  margin: 1vw 0 0 0;
+  background-color: grey;
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+#responseSplash > p.result {
+  font-size: 3vw;
+  line-height: 3.5vw;
 }
 
+#responseSplash > p.resultTip {
+  font-size: 1.5vw;
+  line-height: 1.8vw;
+}
+
+#questionBox > #question {
+  font-size: 4vw;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  padding: 10px;
+  line-height: 4.5vw;
+  text-align: center;
+}
+#option1,#option2,#option3 {
+  position: absolute;
+  width: 25%;
+  top: 68vh;
+  color: white;
+  background-color: grey;
+  text-align: center;
+  border-radius: 5px;
+}
+#option1 {left: 6%;}
+#option2 {left: 37%;}
+#option3 {left: 68%;}
+
+#responseSplash .roundUp {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.roundUp .roundUpLabelQuestion {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
+.roundUp .roundUpScoreQuestion {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
+.roundUp .roundUpLabelTimebonus {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
+.roundUp .roundUpScoreTimebonus {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
+.roundUp .roundUpLabelSum {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
+.roundUp .roundUpScoreSum {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
+/*
 .calificacion {
   pointer-events: none;
 }
@@ -221,7 +161,6 @@ user-select: none;
   height: 7.2vw;
   min-width:10vw;
   max-width: 40vw;
-  /*position: absolute;*/
   margin-left: auto;
   margin-right:auto;
   pointer-events: none;
@@ -303,10 +242,6 @@ p.nextLabel, p.chooseOptionLabel, p.startLabel, p.newHiScoreLabel {
   position: absolute;
   top: 67%;
   width: 25%;
-  /*height: 22%;*/
-}
-#option1,#option2,#option3 {
-  background-color: transparent;
 }
 
 .respuesta .opciones {
@@ -333,9 +268,6 @@ p.nextLabel, p.chooseOptionLabel, p.startLabel, p.newHiScoreLabel {
 .opciones .boton {
   background: url(images/boton.png) 0 0 no-repeat;
   background-size: 100%;
-  /*position: absolute;
-  left: 45.5%;
-  top: 4%;*/
   width: 8vw;
   height: 8vw;
   margin-right: auto;
@@ -343,9 +275,7 @@ p.nextLabel, p.chooseOptionLabel, p.startLabel, p.newHiScoreLabel {
   margin-bottom: 1%;
 }
 
-#option1 {left: 6%;}
-#option2 {left: 37%;}
-#option3 {left: 68%;}
+
 
 
 #errorSplash {
@@ -360,18 +290,15 @@ p.nextLabel, p.chooseOptionLabel, p.startLabel, p.newHiScoreLabel {
 
 }
 
-#responseSplash .roundUp {
+.roundUp {
   width: 30%;
   margin: 30px auto;
-}
-.roundUpLabelHeader {
-  font-size: 1.5vw;
 }
 .roundUpLabelQuestion{ 
   text-align: left;
   width:55%;
   float:left;
- font-size: 1.5vw;}
+ font-size: 1vw;}
 .roundUpScoreQuestion{
   width:45%;
   float:right;
@@ -384,7 +311,7 @@ p.nextLabel, p.chooseOptionLabel, p.startLabel, p.newHiScoreLabel {
   text-align: left;
   width:55%;
   float:left;
- font-size: 1.5vw;
+ font-size: 1vw;
 
   margin-bottom:1vw;}
 .roundUpScoreTimebonus{
@@ -399,7 +326,7 @@ p.nextLabel, p.chooseOptionLabel, p.startLabel, p.newHiScoreLabel {
   text-align: left;
   width:55%;
   float:left;
- font-size: 1.5vw;
+ font-size: 1vw;
 
   margin-bottom:1vw;}
 .roundUpScoreSum{
@@ -429,20 +356,6 @@ p.nextLabel, p.chooseOptionLabel, p.startLabel, p.newHiScoreLabel {
 margin-right: auto;
 margin-left: auto;}
 
-#hiScoreBox{
-  position:absolute;
-  left: 9vw;
-  top: 5px;
-  font-family: 'Fjalla One', sans-serif;
-  color:white;
-  text-shadow:0 0 2px black;
-  text-align: right;
-font-size: 1.3vw;}
-
-#hiScore{
-  font-family: 'Rye', cursive;
-  color: white;
-}
 
 #bg{
   width: 100%;
@@ -454,3 +367,4 @@ font-size: 1.3vw;}
   left: 0;
   box-shadow: 0 0 0px 4px white inset ;
 }
+*/

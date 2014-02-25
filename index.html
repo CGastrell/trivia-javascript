@@ -7,6 +7,7 @@
 		<title>Trivia JS</title>
 		<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Rye&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="base.css">
 		<link rel="stylesheet" href="triviaIgn.css">
 		<style>
 			/*p {margin:0;}*/
@@ -72,7 +73,7 @@
 					<span class="roundUpLabelSum" style="text-align: left;width:45%;inline-block;float:left;"></span>
 					<span class="roundUpScoreSum" style="width:45%;inline-block;float:right;text-align:right;"></span>
 				</div>
-				<div class="cta next" style="clear:both">
+				<div class="cta nextContainer" style="clear:both">
 					<div class="izq"></div>
 					<div class="centro"><p class="nextLabel"></p></div>
 					<div class="der"></div>
@@ -121,15 +122,28 @@
 		<script src="src/triviaJS.js"></script>
 		<script>
 		$(document).ready(function(){
-			$('body').on('trivia:gamespace_ready', function(evt,data) {});
-			// $('body').off('.cg');
 			$('body').trivia({
-				useTemplate: true,
 				questionsFileUrl:'triviafile.json',
 				questionsPerGame:1,
+				labels: {
+					hiScore: "Record del día: ",
+					title: "Geo Trivia IGN",
+					playerScore: "PUNTOS: ",
+					roundUpHeader: "Puntos",
+					roundUpQuestion: "Respuesta correcta:",
+					roundUpTimebonus: "Bonus por tiempo:",
+					roundUpSum: 'Total:',
+					responseOkText: "CORRECTO!",
+					responseFailText: "INCORRECTO!",
+					nextQuestion: 'Continuar',
+					chooseOption: 'Elegí tu respuesta...',
+					startGame: 'Comenzar',
+					newRecord: 'Record del Día!',
+					finalScore: 'Tu puntaje final es: '
+				},
 				'gameSpaceReady': function(evt,data) {
-					data.questionBox.outerWidth(data.width);
-					data._center(data.questionBadge, null, true);
+					data.instance.questionBox.outerWidth(data.instance.width);
+					data.instance._center(data.instance.questionBadge, null, true);
 				}
 			});
 		})
