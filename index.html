@@ -124,6 +124,7 @@
 			$('body').on('trivia:gamespace_ready', function(evt,data) {});
 			// $('body').off('.cg');
 			$('body').trivia({
+				useTemplate: true,
 				questionsFileUrl:'triviafile.json',
 				questionsPerGame:1,
 				'gameSpaceReady': function(evt,data) {

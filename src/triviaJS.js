@@ -394,7 +394,7 @@
 			$('.roundUpLabelHeader', this.roundUpDiv).text(this.options.labels.roundUpHeader);
 			$('.roundUpLabelSum', this.roundUpDiv).text(this.options.labels.roundUpSum);
 			$('p.nextLabel', this.responseSplash).text(this.options.labels.nextQuestion);
-
+			console.log(this);
 			TweenMax.set([
 				this.endSplash,
 				this.newRecordBadge,
@@ -416,7 +416,7 @@
 		},
 		_buildGameSpace: function() {
 			var _this = this;
-			this.html("");
+			this.element.html("");
 			this.gameSpace = $('<div id="gameSpace" />')
 				.appendTo(this.element);
 
@@ -427,6 +427,7 @@
 			);
 
 			this.questionBox = $('<div id="questionBox" />')
+				.append('<p id="question" />')
 				.append('<p class="chooseOptionLabel" />')
 				.appendTo(this.gameSpace);
 
@@ -436,13 +437,16 @@
 			// this.optionsContainer = $('<div id="optionsContainer" />')
 				// .appendTo(this.gameSpace);
 			this.option1 = $('<div id="option1" />')
+				.append('<p />')
 				.appendTo(this.gameSpace);
 			this.option2 = $('<div id="option2" />')
+				.append('<p />')
 				.appendTo(this.gameSpace);
 			this.option3 = $('<div id="option3" />')
+				.append('<p />')
 				.appendTo(this.gameSpace);
 
-			var roundUp = ('<div class="roundUp" />');
+			var roundUp = $('<div class="roundUp" />');
 			roundUp.append('<p class="roundUpLabelHeader" />');
 			roundUp.append('<span class="roundUpLabelQuestion" />');
 			roundUp.append('<span class="roundUpScoreQuestion" />');
@@ -461,9 +465,13 @@
 			this.startSplash = $('<div id="startSplash" />')
 				.append('<div class="title" />')
 				.append('<p class="startLabel" />')
-				.appendTo(this.element);
-				
-			this.endSplash = $('<div id="endSplash" />').appendTo(this.element);
+				.appendTo(this.gameSpace);
+
+			this.endSplash = $('<div id="endSplash" />')
+				.append('<div class="finalScoreLabel" />')
+				.append('<div class="finalScore" />')
+				.append($('<div id="newHiScoreBadge" />').append('<p class="newHiScoreLabel" />'))
+				.appendTo(this.gameSpace);
 
 			this._trigger('gamespace_built', null, this);
 		},
