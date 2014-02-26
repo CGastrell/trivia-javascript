@@ -1,11 +1,11 @@
 {
-    "preguntas":[
+    "questions":[
         {
             "id": "1",
-            "consigna":"¿Cuál es la cota (altura) del cerro Aconcagua, ubicado en la provincia de Mendoza?",
-            "respuesta":"6960.8 metros",
-            "remate":"En el año 2012 el Instituto Geográfico Nacional determinó que la cota oficial del cerro Aconcagua es de 6960,8",
-            "opciones":[
+            "question":"¿Cuál es la cota (altura) del cerro Aconcagua, ubicado en la provincia de Mendoza?",
+            "correctAnswer":"6960.8 metros",
+            "answerTip":"En el año 2012 el Instituto Geográfico Nacional determinó que la cota oficial del cerro Aconcagua es de 6960,8",
+            "options":[
                 "6960.8 metros",
                 "7157.2 metros",
                 "8848 metros"
@@ -13,10 +13,10 @@
         },
         {
             "id": "2",
-            "consigna":"¿Cuál es el lago con mayor superficie en nuestro país?",
-            "respuesta":"Argentino",
-            "remate":"El Lago Argentino tiene una superficie de 1415 Km² y esta íntegramente en el territorio argentino, ubicado en la provincia de Santa Cruz.",
-            "opciones":[
+            "question":"¿Cuál es el lago con mayor superficie en nuestro país?",
+            "correctAnswer":"Argentino",
+            "answerTip":"El Lago Argentino tiene una superficie de 1415 Km² y esta íntegramente en el territorio argentino, ubicado en la provincia de Santa Cruz.",
+            "options":[
                 "Nahuel Huapi",
                 "Huechulaufquen",
                 "Argentino"
@@ -24,10 +24,10 @@
         },
         {
             "id": "3",
-            "consigna":"¿Dónde se encuentra el punto más bajo respecto al nivel del mar de la República Argentina?",
-            "respuesta":"Gran Bajo de San Julián",
-            "remate":"El Gran Bajo de San Julián es una cuenca endorreica situada en la provincia de Santa Cruz. Con 105 metros bajo el nivel del mar, es la mayor depresión de la Argentina según datos del Instituto Geográfico Nacional.",
-            "opciones":[
+            "question":"¿Dónde se encuentra el punto más bajo respecto al nivel del mar de la República Argentina?",
+            "correctAnswer":"Gran Bajo de San Julián",
+            "answerTip":"El Gran Bajo de San Julián es una cuenca endorreica situada en la provincia de Santa Cruz. Con 105 metros bajo el nivel del mar, es la mayor depresión de la Argentina según datos del Instituto Geográfico Nacional.",
+            "options":[
                 "Gran Bajo de San Julián",
                 "Gran Bajo Del Gualicho",
                 "Salinas Grandes"
@@ -35,10 +35,10 @@
         },
         {
             "id": "4",
-            "consigna":"¿Cuál es la provincia con menor superficie de la República Argentina?",
-            "respuesta":"Tucumán",
-            "remate":"La provincia con menor superficie es Tucumán. Situada en el noroeste argentino cuenta con  22.524 Km². Limita al norte con la provincia de Salta, al este y sur con Santiago del Estero y al oeste y sur con Catamarca.",
-            "opciones":[
+            "question":"¿Cuál es la provincia con menor superficie de la República Argentina?",
+            "correctAnswer":"Tucumán",
+            "answerTip":"La provincia con menor superficie es Tucumán. Situada en el noroeste argentino cuenta con  22.524 Km². Limita al norte con la provincia de Salta, al este y sur con Santiago del Estero y al oeste y sur con Catamarca.",
+            "options":[
                 "Tucumán",
                 "Jujuy",
                 "Entre Ríos"
@@ -46,10 +46,10 @@
         },
         {
             "id": "5",
-            "consigna":"¿En cuál provincia se encuentran las termas de Río Hondo?",
-            "respuesta":"Santiago del Estero",
-            "remate":"Las Termas de Río Hondo se encuentran en la Provincia de Santiago del Estero. Es cabecera del departamento Río Hondo, a orillas del Río Dulce. Es el principal centro termal del país y de América del Sur, ya que la misma se encuentra sobre una gran terma mineralizada que cubre 12 Km²",
-            "opciones":[
+            "question":"¿En cuál provincia se encuentran las termas de Río Hondo?",
+            "correctAnswer":"Santiago del Estero",
+            "answerTip":"Las Termas de Río Hondo se encuentran en la Provincia de Santiago del Estero. Es cabecera del departamento Río Hondo, a orillas del Río Dulce. Es el principal centro termal del país y de América del Sur, ya que la misma se encuentra sobre una gran terma mineralizada que cubre 12 Km²",
+            "options":[
                 "Santiago del Estero",
                 "Santa Cruz",
                 "Chaco"
@@ -57,10 +57,10 @@
         },
         {
             "id": "6",
-            "consigna":"¿Cuántos saltos forman las Cataratas del Iguazú?",
-            "respuesta":"275",
-            "remate":"275 saltos. Se localizan sobre el río Iguazú, en el límite entre la provincia de Misiones y el estado brasileño de Paraná. El 80% de los saltos se encuentran en territorio argentino.",
-            "opciones":[
+            "question":"¿Cuántos saltos forman las Cataratas del Iguazú?",
+            "correctAnswer":"275",
+            "answerTip":"275 saltos. Se localizan sobre el río Iguazú, en el límite entre la provincia de Misiones y el estado brasileño de Paraná. El 80% de los saltos se encuentran en territorio argentino.",
+            "options":[
                 "275",
                 "75",
                 "150"
@@ -68,10 +68,10 @@
         },
         {
             "id": "7",
-            "consigna":"¿Qué profundidad alcanza el lago Nahuel Huapi?",
-            "respuesta":"464 metros",
-            "remate":"Alcanza una profundidad máxima de 464 metros. Es compartido por las provincias del Neuquén y de Río Negro. Posee una superficie de 557 Km² y se sitúa a una altitud de unos 700 msnm.",
-            "opciones":[
+            "question":"¿Qué profundidad alcanza el lago Nahuel Huapi?",
+            "correctAnswer":"464 metros",
+            "answerTip":"Alcanza una profundidad máxima de 464 metros. Es compartido por las provincias del Neuquén y de Río Negro. Posee una superficie de 557 Km² y se sitúa a una altitud de unos 700 msnm.",
+            "options":[
                 "464 metros",
                 "574 metros",
                 "365 metros"
@@ -79,10 +79,10 @@
         },
         {
             "id": "8",
-            "consigna":"¿Cuál es la provincia con mayor población de nuestro país?",
-            "respuesta":"Buenos Aires",
-            "remate":"Buenos Aires registra mayor cantidad de habitantes según el Censo Nacional de Población, Hogares y Viviendas, realizado por el INDEC en el año 2010.",
-            "opciones":[
+            "question":"¿Cuál es la provincia con mayor población de nuestro país?",
+            "correctAnswer":"Buenos Aires",
+            "answerTip":"Buenos Aires registra mayor cantidad de habitantes según el Censo Nacional de Población, Hogares y Viviendas, realizado por el INDEC en el año 2010.",
+            "options":[
                 "Córdoba",
                 "Buenos Aires",
                 "Santa Fe"
@@ -90,10 +90,10 @@
         },
         {
             "id": "9",
-            "consigna":"¿Cuál es la provincia con mayor superficie de la República Argentina?",
-            "respuesta":"Tierra del Fuego, Antártida e Islas del Atlántico Sur",
-            "remate":"Tierra del Fuego, Antártida e Islas del Atlántico Sur. Con 1.002.445 km²  es la provincia con mayor superficie de la República Argentina.",
-            "opciones":[
+            "question":"¿Cuál es la provincia con mayor superficie de la República Argentina?",
+            "correctAnswer":"Tierra del Fuego, Antártida e Islas del Atlántico Sur",
+            "answerTip":"Tierra del Fuego, Antártida e Islas del Atlántico Sur. Con 1.002.445 km²  es la provincia con mayor superficie de la República Argentina.",
+            "options":[
                 "Buenos Aires",
                 "Santa Cruz",
                 "Tierra del Fuego, Antártida e Islas del Atlántico Sur"
@@ -101,10 +101,10 @@
         },
         {
             "id": "10",
-            "consigna":"¿Cuántas provincias tiene la República Argentina?",
-            "respuesta":"23",
-            "remate":"La República Argentina tiene 23 provincias y 1 distrito federal que es la Ciudad Autónoma de Buenos Aires, capital del país.",
-            "opciones":[
+            "question":"¿Cuántas provincias tiene la República Argentina?",
+            "correctAnswer":"23",
+            "answerTip":"La República Argentina tiene 23 provincias y 1 distrito federal que es la Ciudad Autónoma de Buenos Aires, capital del país.",
+            "options":[
                 "23",
                 "24",
                 "25"
@@ -112,10 +112,10 @@
         },
         {
             "id": "11",
-            "consigna":"¿Cuál es la localidad ubicada a mayor altura sobre el nivel del mar de la República Argentina?",
-            "respuesta":"Olacapato (Salta)",
-            "remate":"Olacapato se encuentra 4.090 msnm y es una pequeña localidad de la provincia de Salta, dentro del Departamento Los Andes",
-            "opciones":[
+            "question":"¿Cuál es la localidad ubicada a mayor altura sobre el nivel del mar de la República Argentina?",
+            "correctAnswer":"Olacapato (Salta)",
+            "answerTip":"Olacapato se encuentra 4.090 msnm y es una pequeña localidad de la provincia de Salta, dentro del Departamento Los Andes",
+            "options":[
                 "Iruya (Salta)",
                 "Olacapato (Salta)",
                 "Humahuaca (Jujuy)"
@@ -123,10 +123,10 @@
         },
         {
             "id": "12",
-            "consigna":"¿Cuál es el punto emergido más austral con soberanía plena de la Argentina?",
-            "respuesta":"Cabo San Pío",
-            "remate":"El Cabo San Pío es definido por el Instituto Geográfico Nacional, como el punto más austral del territorio con soberanía no disputada de la Argentina. Ubicado en la isla Grande de Tierra del Fuego, dentro de la provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur (Latitud 55º 03' S; Longitud 66º 31' O)",
-            "opciones":[
+            "question":"¿Cuál es el punto emergido más austral con soberanía plena de la Argentina?",
+            "correctAnswer":"Cabo San Pío",
+            "answerTip":"El Cabo San Pío es definido por el Instituto Geográfico Nacional, como el punto más austral del territorio con soberanía no disputada de la Argentina. Ubicado en la isla Grande de Tierra del Fuego, dentro de la provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur (Latitud 55º 03' S; Longitud 66º 31' O)",
+            "options":[
                 "Punta Dungeness",
                 "Península Valdez",
                 "Cabo San Pío"
@@ -134,10 +134,10 @@
         },
         {
             "id": "13",
-            "consigna":"¿En qué provincia está ubicado el Parque Nacional Los Alerces?",
-            "respuesta":"Chubut",
-            "remate":"El parque nacional Los Alerces se encuentra en la Provincia del Chubut. Fue creado en el año 1937 y posee una superficie de 259 570 ha. El fundamento de su creación es la protección de los bosques de lahuán o alerce, uno de los árboles de mayor longevidad del planeta, que llegó a estar en peligro de extinción.",
-            "opciones":[
+            "question":"¿En qué provincia está ubicado el Parque Nacional Los Alerces?",
+            "correctAnswer":"Chubut",
+            "answerTip":"El parque nacional Los Alerces se encuentra en la Provincia del Chubut. Fue creado en el año 1937 y posee una superficie de 259 570 ha. El fundamento de su creación es la protección de los bosques de lahuán o alerce, uno de los árboles de mayor longevidad del planeta, que llegó a estar en peligro de extinción.",
+            "options":[
                 "Santa Cruz",
                 "Chubut",
                 "Santa Fe"
@@ -145,10 +145,10 @@
         },
         {
             "id": "14",
-            "consigna":"¿Cuál es la ruta nacional más extensa dentro del territorio nacional?",
-            "respuesta":"Ruta Nº 40",
-            "remate":"La Ruta Nacional Nº 40 se extiende desde Cabo Vírgenes (Santa Cruz) hasta el límite con Bolivia en la ciudad de La Quiaca (Jujuy). La ruta recorre 5301 Km. comienza a nivel del mar, atraviesa 21 parques nacionales, 18 importantes ríos, conecta 27 pasos cordilleranos y trepa (en el Km 4601) a más de 5000 msnm en el Abra del Acay en Salta.",
-            "opciones":[
+            "question":"¿Cuál es la ruta nacional más extensa dentro del territorio nacional?",
+            "correctAnswer":"Ruta Nº 40",
+            "answerTip":"La Ruta Nacional Nº 40 se extiende desde Cabo Vírgenes (Santa Cruz) hasta el límite con Bolivia en la ciudad de La Quiaca (Jujuy). La ruta recorre 5301 Km. comienza a nivel del mar, atraviesa 21 parques nacionales, 18 importantes ríos, conecta 27 pasos cordilleranos y trepa (en el Km 4601) a más de 5000 msnm en el Abra del Acay en Salta.",
+            "options":[
                 "Ruta Nº 8",
                 "Ruta Nº 9",
                 "Ruta Nº 40"
@@ -156,10 +156,10 @@
         },
         {
             "id": "15",
-            "consigna":"¿En qué provincia están ubicados los Esteros del Iberá?",
-            "respuesta":"Corrientes",
-            "remate":"Los Esteros del Iberá se encuentran en la provincia de Corrientes. Es una amplia red que abarca entre 15 000 y 25 000 Km². El centro aproximado de este sistema se ubica en las coordenadas 28°36′00″S 57°49′0″O.Gracias a su peculiar geografía y al difícil acceso, la zona cuenta con una variada flora y fauna.",
-            "opciones":[
+            "question":"¿En qué provincia están ubicados los Esteros del Iberá?",
+            "correctAnswer":"Corrientes",
+            "answerTip":"Los Esteros del Iberá se encuentran en la provincia de Corrientes. Es una amplia red que abarca entre 15 000 y 25 000 Km². El centro aproximado de este sistema se ubica en las coordenadas 28°36′00″S 57°49′0″O.Gracias a su peculiar geografía y al difícil acceso, la zona cuenta con una variada flora y fauna.",
+            "options":[
                 "Chaco",
                 "Corrientes",
                 "Entre Ríos"
@@ -167,10 +167,10 @@
         },
         {
             "id": "16",
-            "consigna":"¿Cuál es la superficie total de la República Argentina?",
-            "respuesta":"3.761.274 km²",
-            "remate":"La Superficie Total de la República Argentina es 3.761.274 km², de los cuales: 2.791.810 km² corresponden al Continente Americano y 969.464 km² al Continente Antártico (incluyendo las islas Orcadas del Sur) y a las islas australes (Georgias del Sur y Sandwich del Sur).",
-            "opciones":[
+            "question":"¿Cuál es la superficie total de la República Argentina?",
+            "correctAnswer":"3.761.274 km²",
+            "answerTip":"La Superficie Total de la República Argentina es 3.761.274 km², de los cuales: 2.791.810 km² corresponden al Continente Americano y 969.464 km² al Continente Antártico (incluyendo las islas Orcadas del Sur) y a las islas australes (Georgias del Sur y Sandwich del Sur).",
+            "options":[
                 "3.761.274 km²",
                 "5.867.174 Km²",
                 "15.364.804 Km²"
@@ -178,10 +178,10 @@
         },
         {
             "id": "17",
-            "consigna":"¿En qué provincia está ubicado el Valle de la Luna?",
-            "respuesta":"San Juan",
-            "remate":"El Parque provincial Valle de la Luna, se encuentra en el extremo norte de la provincia de San Juan, en el Departamento Valle Fértil. Es un área protegida de 275 369 ha, célebre a nivel científico, ya que resguarda una importante reserva paleontológica. Es el único lugar donde puede verse totalmente al descubierto y perfectamente diferenciado todo el periodo triásico en forma completa y ordenada. Se calcula que las formaciones geológicas de este sitio tienen una antigüedad entre 180 y 230 millones de años.",
-            "opciones":[
+            "question":"¿En qué provincia está ubicado el Valle de la Luna?",
+            "correctAnswer":"San Juan",
+            "answerTip":"El Parque provincial Valle de la Luna, se encuentra en el extremo norte de la provincia de San Juan, en el Departamento Valle Fértil. Es un área protegida de 275 369 ha, célebre a nivel científico, ya que resguarda una importante reserva paleontológica. Es el único lugar donde puede verse totalmente al descubierto y perfectamente diferenciado todo el periodo triásico en forma completa y ordenada. Se calcula que las formaciones geológicas de este sitio tienen una antigüedad entre 180 y 230 millones de años.",
+            "options":[
                 "Catamarca",
                 "San Juan",
                 "La Rioja"
@@ -189,10 +189,10 @@
         },
         {
             "id": "18",
-            "consigna":"¿Cuáles son los nombres de las mayores islas que forman el archipiélago malvinero?",
-            "respuesta":"Gran Malvina y Soledad",
-            "remate":"Los nombres de las Islas son Gran Malvina (4377Km²) y Soledad (6353 Km²) separadas por el estrecho de San Carlos, ubicadas en el Mar Argentino.",
-            "opciones":[
+            "question":"¿Cuáles son los nombres de las mayores islas que forman el archipiélago malvinero?",
+            "correctAnswer":"Gran Malvina y Soledad",
+            "answerTip":"Los nombres de las Islas son Gran Malvina (4377Km²) y Soledad (6353 Km²) separadas por el estrecho de San Carlos, ubicadas en el Mar Argentino.",
+            "options":[
                 "Falklands",
                 "Martín García",
                 "Gran Malvina y Soledad"
@@ -200,10 +200,10 @@
         },
         {
             "id": "19",
-            "consigna":"¿Cuantas son las provincias cuyas capitales llevan sus mismos nombres?",
-            "respuesta":"11",
-            "remate":"Son 11 (once) las provincias cuyas capitales llevan sus mismos nombres: Córdoba, Corrientes, Formosa, La Rioja, Mendoza, Neuquén, Salta, San Juan, San Luis, Santa Fe y Santiago del Estero.",
-            "opciones":[
+            "question":"¿Cuantas son las provincias cuyas capitales llevan sus mismos nombres?",
+            "correctAnswer":"11",
+            "answerTip":"Son 11 (once) las provincias cuyas capitales llevan sus mismos nombres: Córdoba, Corrientes, Formosa, La Rioja, Mendoza, Neuquén, Salta, San Juan, San Luis, Santa Fe y Santiago del Estero.",
+            "options":[
                 "8",
                 "11",
                 "20"
@@ -211,10 +211,10 @@
         },
         {
             "id": "20",
-            "consigna":"¿Cuántos Parques Nacionales existen en la República Argentina?",
-            "respuesta":"34",
-            "remate":"La República Argentina cuenta con un sistema de 34 parques nacionales destinado a proteger el patrimonio natural y cultural del país.",
-            "opciones":[
+            "question":"¿Cuántos Parques Nacionales existen en la República Argentina?",
+            "correctAnswer":"34",
+            "answerTip":"La República Argentina cuenta con un sistema de 34 parques nacionales destinado a proteger el patrimonio natural y cultural del país.",
+            "options":[
                 "29",
                 "34",
                 "12"
@@ -222,10 +222,10 @@
         },
         {
             "id": "21",
-            "consigna":"¿Cuál es la altura del Obelisco de la Ciudad de Buenos Aires?",
-            "respuesta":"67.5 metros",
-            "remate":"La altura del Obelisco de la Ciudad de Buenos Aires es de 67.5 metros. El Obelisco fue construido en 1936 con motivo del cuarto centenario de la fundación de la ciudad. Está emplazado en la Plaza de la República, en la intersección de las avenidas Corrientes y 9 de Julio. Fue declarado Monumento Histórico Nacional.",
-            "opciones":[
+            "question":"¿Cuál es la altura del Obelisco de la Ciudad de Buenos Aires?",
+            "correctAnswer":"67.5 metros",
+            "answerTip":"La altura del Obelisco de la Ciudad de Buenos Aires es de 67.5 metros. El Obelisco fue construido en 1936 con motivo del cuarto centenario de la fundación de la ciudad. Está emplazado en la Plaza de la República, en la intersección de las avenidas Corrientes y 9 de Julio. Fue declarado Monumento Histórico Nacional.",
+            "options":[
                 "67.5 metros",
                 "61.2 metros",
                 "105.7 metros"
@@ -233,10 +233,10 @@
         },
         {
             "id": "22",
-            "consigna":"¿Cuál es el máximo ancho del Río de la Plata?",
-            "respuesta":"219 km",
-            "remate":"El Río de la Plata esta formado por la unión de los ríos Paraná y Uruguay. Debido a su anchura, es reconocido como el río más ancho del mundo.",
-            "opciones":[
+            "question":"¿Cuál es el máximo ancho del Río de la Plata?",
+            "correctAnswer":"219 km",
+            "answerTip":"El Río de la Plata esta formado por la unión de los ríos Paraná y Uruguay. Debido a su anchura, es reconocido como el río más ancho del mundo.",
+            "options":[
                 "150 km",
                 "329 km",
                 "219 km"
@@ -244,10 +244,10 @@
         },
         {
             "id": "23",
-            "consigna":"¿Cuál es el la avenida más larga de la Ciudad de Buenos Aires?",
-            "respuesta":"Rivadavia",
-            "remate":"La avenida más larga de la Ciudad de Buenos Aires es Rivadavia. Con más de 35 km de extensión nace en la Plaza de Mayo, centro histórico de la ciudad, y finaliza en Moreno, Provincia de Buenos Aires.",
-            "opciones":[
+            "question":"¿Cuál es el la avenida más larga de la Ciudad de Buenos Aires?",
+            "correctAnswer":"Rivadavia",
+            "answerTip":"La avenida más larga de la Ciudad de Buenos Aires es Rivadavia. Con más de 35 km de extensión nace en la Plaza de Mayo, centro histórico de la ciudad, y finaliza en Moreno, Provincia de Buenos Aires.",
+            "options":[
                 "Cabildo",
                 "Corrientes",
                 "Rivadavia"
@@ -255,10 +255,10 @@
         },
         {
             "id": "24",
-            "consigna":"¿En que año El Parque Nacional Los Glaciares fue declarado patrimonio de la humanidad por la UNESCO?",
-            "respuesta":"1981",
-            "remate":"El parque Nacional Los Glaciares fue declarado patrimonio de la humanidad por la UNESCO en el año 1981. Se extiende sobre 726 927ha ubicadas en el sudoeste de la Provincia de Santa Cruz.",
-            "opciones":[
+            "question":"¿En que año El Parque Nacional Los Glaciares fue declarado patrimonio de la humanidad por la UNESCO?",
+            "correctAnswer":"1981",
+            "answerTip":"El parque Nacional Los Glaciares fue declarado patrimonio de la humanidad por la UNESCO en el año 1981. Se extiende sobre 726 927ha ubicadas en el sudoeste de la Provincia de Santa Cruz.",
+            "options":[
                 "1981",
                 "1937",
                 "1999"
@@ -266,10 +266,10 @@
         },
         {
             "id": "25",
-            "consigna":"¿Qué superficie tiene la Ciudad de Buenos Aires?",
-            "respuesta":"200 Km²",
-            "remate":"La Ciudad de Buenos Aires tiene una superficie de 200 Km²",
-            "opciones":[
+            "question":"¿Qué superficie tiene la Ciudad de Buenos Aires?",
+            "correctAnswer":"200 Km²",
+            "answerTip":"La Ciudad de Buenos Aires tiene una superficie de 200 Km²",
+            "options":[
                 "200 Km²",
                 "304 Km²",
                 "105 Km²"
@@ -277,10 +277,10 @@
         },
         {
             "id": "26",
-            "consigna":"¿En que provincia se encuentra el Cerro Uritorco?",
-            "respuesta":"Córdoba",
-            "remate":"El cerro Uritorco se encuentra en la provincia de Córdoba. El Uritorco tiene una altura de 1949 msnm y esta situado en el norte del Valle de Punilla, próximo a Capilla del Monte.",
-            "opciones":[
+            "question":"¿En que provincia se encuentra el Cerro Uritorco?",
+            "correctAnswer":"Córdoba",
+            "answerTip":"El cerro Uritorco se encuentra en la provincia de Córdoba. El Uritorco tiene una altura de 1949 msnm y esta situado en el norte del Valle de Punilla, próximo a Capilla del Monte.",
+            "options":[
                 "Tucumán",
                 "Salta",
                 "Córdoba"
@@ -288,10 +288,10 @@
         },
         {
             "id": "27",
-            "consigna":"¿Cuál es la avenida más ancha de la Ciudad de Buenos Aires?",
-            "respuesta":"Avenida 9 de Julio",
-            "remate":"La avenida 9 de Julio es la más ancha de la Ciudad de Buenos Aires.  Su ancho es de 140 metros. Lleva su nombre en honor al día de la declaración de independencia del país, efectuada el 9 de julio de 1816.",
-            "opciones":[
+            "question":"¿Cuál es la avenida más ancha de la Ciudad de Buenos Aires?",
+            "correctAnswer":"Avenida 9 de Julio",
+            "answerTip":"La avenida 9 de Julio es la más ancha de la Ciudad de Buenos Aires.  Su ancho es de 140 metros. Lleva su nombre en honor al día de la declaración de independencia del país, efectuada el 9 de julio de 1816.",
+            "options":[
                 "Avenida 9 de Julio",
                 "Avenida Rivadavia",
                 "Avenida Corrientes"
@@ -299,10 +299,10 @@
         },
         {
             "id": "28",
-            "consigna":"¿En que año fue creado El Parque Nacional Iguazú?",
-            "respuesta":"1934",
-            "remate":"El parque Nacional Iguazú fue creado en el 9 de octubre de 1934. Es un área protegida de la Argentina creada con el objetivo de conservar el entorno y la biodiversidad de las cataratas del Iguazú, las que resultaron elegidas como una de las «Siete maravillas naturales del mundo».",
-            "opciones":[
+            "question":"¿En que año fue creado El Parque Nacional Iguazú?",
+            "correctAnswer":"1934",
+            "answerTip":"El parque Nacional Iguazú fue creado en el 9 de octubre de 1934. Es un área protegida de la Argentina creada con el objetivo de conservar el entorno y la biodiversidad de las cataratas del Iguazú, las que resultaron elegidas como una de las «Siete maravillas naturales del mundo».",
+            "options":[
                 "1984",
                 "1934",
                 "1994"
@@ -310,10 +310,10 @@
         },
         {
             "id": "29",
-            "consigna":"¿Cuántos barrios tiene la Ciudad de Buenos Aires?",
-            "respuesta":"48",
-            "remate":"La Ciudad de Buenos Aires se encuentra dividida en 48 barrios. Los más antiguos derivan de las antiguas parroquias establecidas en el siglo XIX. A partir de fines del siglo XIX surge una nueva generación de barrios, ya no determinados por parroquias sino con distintos orígenes.",
-            "opciones":[
+            "question":"¿Cuántos barrios tiene la Ciudad de Buenos Aires?",
+            "correctAnswer":"48",
+            "answerTip":"La Ciudad de Buenos Aires se encuentra dividida en 48 barrios. Los más antiguos derivan de las antiguas parroquias establecidas en el siglo XIX. A partir de fines del siglo XIX surge una nueva generación de barrios, ya no determinados por parroquias sino con distintos orígenes.",
+            "options":[
                 "48",
                 "100",
                 "74"
@@ -321,10 +321,10 @@
         },
         {
             "id": "30",
-            "consigna":"¿En que provincia se encuentra La Cueva de las Manos del Río Pinturas?",
-            "respuesta":"Santa Cruz",
-            "remate":"La Cueva de las Manos del Río Pinturas se encuentra en la Provincia de Santa Cruz. Es un sitio arqueológico y de pinturas rupestres que data de 7350 años A.C. Se trata de una de las expresiones artísticas más antiguas de los pueblos sudamericanos y ha sido declarada Patrimonio de la Humanidad por la UNESCO.",
-            "opciones":[
+            "question":"¿En que provincia se encuentra La Cueva de las Manos del Río Pinturas?",
+            "correctAnswer":"Santa Cruz",
+            "answerTip":"La Cueva de las Manos del Río Pinturas se encuentra en la Provincia de Santa Cruz. Es un sitio arqueológico y de pinturas rupestres que data de 7350 años A.C. Se trata de una de las expresiones artísticas más antiguas de los pueblos sudamericanos y ha sido declarada Patrimonio de la Humanidad por la UNESCO.",
+            "options":[
                 "Río Negro",
                 "Chubut",
                 "Santa Cruz"
@@ -332,10 +332,10 @@
         },
         {
             "id": "31",
-            "consigna":"¿Cuál es el barrio con mayor superficie de la Ciudad de Buenos Aires?",
-            "respuesta":"Palermo",
-            "remate":"El barrio con mayor superficie de la Ciudad De Buenos Aires es Palermo. Con una extensión de 15,9 Km² se ubicada al norte de la ciudad y su territorio abarca la totalidad de la Comuna 14.",
-            "opciones":[
+            "question":"¿Cuál es el barrio con mayor superficie de la Ciudad de Buenos Aires?",
+            "correctAnswer":"Palermo",
+            "answerTip":"El barrio con mayor superficie de la Ciudad De Buenos Aires es Palermo. Con una extensión de 15,9 Km² se ubicada al norte de la ciudad y su territorio abarca la totalidad de la Comuna 14.",
+            "options":[
                 "Villa Urquiza",
                 "Palermo",
                 "San Nicolás"
@@ -343,10 +343,10 @@
         },
         {
             "id": "32",
-            "consigna":"¿En que provincia se encuentra la Península Valdés?",
-            "respuesta":"Chubut",
-            "remate":"La Península Valdés se encuentra en la  Provincia del Chubut. Es uno de los Patrimonios de la Humanidad declarado por la UNESCO en Argentina. Presenta una porción de tierra de contorno casi triangular unida al continente por el istmo Carlos Ameghino. Su centro geográfico se ubica hacia las coordenadas: 42°31′S 63°55′O.",
-            "opciones":[
+            "question":"¿En que provincia se encuentra la Península Valdés?",
+            "correctAnswer":"Chubut",
+            "answerTip":"La Península Valdés se encuentra en la  Provincia del Chubut. Es uno de los Patrimonios de la Humanidad declarado por la UNESCO en Argentina. Presenta una porción de tierra de contorno casi triangular unida al continente por el istmo Carlos Ameghino. Su centro geográfico se ubica hacia las coordenadas: 42°31′S 63°55′O.",
+            "options":[
                 "Río Negro",
                 "Chubut",
                 "Santa Cruz"
@@ -354,10 +354,10 @@
         },
         {
             "id": "33",
-            "consigna":"¿Cuál es el barrio con menor superficie de la Ciudad de Buenos Aires?",
-            "respuesta":"San Telmo",
-            "remate":"El barrio con menor superficie de la Ciudad de Buenos Aires es San Telmo. Con sólo 1,2 Km² de extensión, es uno de los barrios más antiguos de la ciudad.",
-            "opciones":[
+            "question":"¿Cuál es el barrio con menor superficie de la Ciudad de Buenos Aires?",
+            "correctAnswer":"San Telmo",
+            "answerTip":"El barrio con menor superficie de la Ciudad de Buenos Aires es San Telmo. Con sólo 1,2 Km² de extensión, es uno de los barrios más antiguos de la ciudad.",
+            "options":[
                 "Monserrat",
                 "La Boca",
                 "San Telmo"
@@ -365,10 +365,10 @@
         },
         {
             "id": "34",
-            "consigna":"¿Cuál es el nombre de la capital de Misiones?",
-            "respuesta":"Posadas",
-            "remate":"El nombre de la capital de Misiones es Posadas. Ubicada en las coordenadas 27°22′0″S 55°53′49″O es la ciudad más poblada de la provincia y su centro administrativo, comercial y cultural.",
-            "opciones":[
+            "question":"¿Cuál es el nombre de la capital de Misiones?",
+            "correctAnswer":"Posadas",
+            "answerTip":"El nombre de la capital de Misiones es Posadas. Ubicada en las coordenadas 27°22′0″S 55°53′49″O es la ciudad más poblada de la provincia y su centro administrativo, comercial y cultural.",
+            "options":[
                 "Rawson",
                 "Posadas",
                 "Puerto Iguazú"
@@ -376,10 +376,10 @@
         },
         {
             "id": "35",
-            "consigna":"¿Cuál provincia argentina es popularmente conocida como el “Jardín de la República”?",
-            "respuesta":"Tucumán",
-            "remate":"Tucumán es popularmente conocida como el “Jardín de la República”. La cantidad de precipitaciones da lugar a una zona de vegetación abundante que justifica que la provincia sea conocida con tal denominación.",
-            "opciones":[
+            "question":"¿Cuál provincia argentina es popularmente conocida como el “Jardín de la República”?",
+            "correctAnswer":"Tucumán",
+            "answerTip":"Tucumán es popularmente conocida como el “Jardín de la República”. La cantidad de precipitaciones da lugar a una zona de vegetación abundante que justifica que la provincia sea conocida con tal denominación.",
+            "options":[
                 "Mendoza",
                 "Salta",
                 "Tucumán"
@@ -387,10 +387,10 @@
         },
         {
             "id": "36",
-            "consigna":"¿Cuál es el barrio que se encuentra en el centro geográfico de la Ciudad de Buenos Aires?",
-            "respuesta":"Caballito",
-            "remate":"El barrio de Caballito se encuentra en el centro geográfico de la Ciudad Buenos Aires y su territorio coincide con el de la Comuna 6. Tiene una superficie de 6,8 km2. El sitio correcto está ubicado sobre la calle Avellaneda 1023, a pocos metros de la cancha del club Ferrocarril Oeste. Allí se encuentra una casa de principios del siglo pasado, que presenta en su fachada una placa de fundición de hierro que dice: 'Municipalidad de la Ciudad de Buenos Aires, Dirección General de Catastro. En esta parcela 14, de la manzana 9, sección 45, circunscripción 7, se halla el centro geométrico de la ciudad'.",
-            "opciones":[
+            "question":"¿Cuál es el barrio que se encuentra en el centro geográfico de la Ciudad de Buenos Aires?",
+            "correctAnswer":"Caballito",
+            "answerTip":"El barrio de Caballito se encuentra en el centro geográfico de la Ciudad Buenos Aires y su territorio coincide con el de la Comuna 6. Tiene una superficie de 6,8 km2. El sitio correcto está ubicado sobre la calle Avellaneda 1023, a pocos metros de la cancha del club Ferrocarril Oeste. Allí se encuentra una casa de principios del siglo pasado, que presenta en su fachada una placa de fundición de hierro que dice: 'Municipalidad de la Ciudad de Buenos Aires, Dirección General de Catastro. En esta parcela 14, de la manzana 9, sección 45, circunscripción 7, se halla el centro geométrico de la ciudad'.",
+            "options":[
                 "La Boca",
                 "Almagro",
                 "Caballito"
@@ -398,10 +398,10 @@
         },
         {
             "id": "37",
-            "consigna":"¿En cuál provincia se encuentra ubicado el Volcán Lanín?",
-            "respuesta":"Neuquén",
-            "remate":"El Volcán Lanín se encuentra ubicado en la provincia del Neuquén. Situado en las coordenadas 39°38′22″S 71°30′64″O posee una altitud de 3776 msnm.",
-            "opciones":[
+            "question":"¿En cuál provincia se encuentra ubicado el Volcán Lanín?",
+            "correctAnswer":"Neuquén",
+            "answerTip":"El Volcán Lanín se encuentra ubicado en la provincia del Neuquén. Situado en las coordenadas 39°38′22″S 71°30′64″O posee una altitud de 3776 msnm.",
+            "options":[
                 "Neuquén",
                 "San Juan",
                 "Mendoza"
@@ -409,10 +409,10 @@
         },
         {
             "id": "38",
-            "consigna":"¿En la cima de cuál cerro argentino se encuentra la escultura denominada “El Cristo Bendicente” del artista Juan Carlos Iramain?",
-            "respuesta":"Cerro San Javier",
-            "remate":"El Cristo Bendicente se encuentra en la cima del cerro San Javier, en Yerba Buena (provincia de Tucumán). Mide 28 metros de altura y levanta su brazo derecho en signo de bendición.",
-            "opciones":[
+            "question":"¿En la cima de cuál cerro argentino se encuentra la escultura denominada “El Cristo Bendicente” del artista Juan Carlos Iramain?",
+            "correctAnswer":"Cerro San Javier",
+            "answerTip":"El Cristo Bendicente se encuentra en la cima del cerro San Javier, en Yerba Buena (provincia de Tucumán). Mide 28 metros de altura y levanta su brazo derecho en signo de bendición.",
+            "options":[
                 "Cerro Uritorco",
                 "Cerro San Javier",
                 "Cerro San Bernardo"
@@ -420,10 +420,10 @@
         },
         {
             "id": "39",
-            "consigna":"¿En cuál provincia se encuentra el Parque Nacional “El Palmar”?",
-            "respuesta":"Entre Ríos",
-            "remate":"El parque nacional El Palmar se encuentra ubicado en la provincia de Entre Ríos.  Fue creado en 1966 con el objetivo de conservar un sector representativo de palmares de yatay.",
-            "opciones":[
+            "question":"¿En cuál provincia se encuentra el Parque Nacional “El Palmar”?",
+            "correctAnswer":"Entre Ríos",
+            "answerTip":"El parque nacional El Palmar se encuentra ubicado en la provincia de Entre Ríos.  Fue creado en 1966 con el objetivo de conservar un sector representativo de palmares de yatay.",
+            "options":[
                 "Chaco",
                 "Entre Ríos",
                 "Formosa"
@@ -431,10 +431,10 @@
         },
         {
             "id": "40",
-            "consigna":"¿Cuál localidad de la provincia del Chubut es considerada “La Capital de la Fruta Fina”?",
-            "respuesta":"El Hoyo",
-            "remate":"El Hoyo es la localidad de la provincia del Chubut considerada como “la Capital de la Fruta Fina”. Declarada en el año 1986 todos los meses de enero se celebra la Fiesta Nacional de la Fruta Fina con el objetivo de homenajear la principal actividad económica. El grupo de “frutas finas” -denominación que se vincula al aspecto comercial y no al botánico- incluye a un conjunto de especies que se caracterizan por su reducido tamaño y pueden clasificarse en Berries, (Arándanos, Frambuesas rojas, Moras y frutillas) y Cherries (Cerezas y Guindas)",
-            "opciones":[
+            "question":"¿Cuál localidad de la provincia del Chubut es considerada “La Capital de la Fruta Fina”?",
+            "correctAnswer":"El Hoyo",
+            "answerTip":"El Hoyo es la localidad de la provincia del Chubut considerada como “la Capital de la Fruta Fina”. Declarada en el año 1986 todos los meses de enero se celebra la Fiesta Nacional de la Fruta Fina con el objetivo de homenajear la principal actividad económica. El grupo de “frutas finas” -denominación que se vincula al aspecto comercial y no al botánico- incluye a un conjunto de especies que se caracterizan por su reducido tamaño y pueden clasificarse en Berries, (Arándanos, Frambuesas rojas, Moras y frutillas) y Cherries (Cerezas y Guindas)",
+            "options":[
                 "El Hoyo",
                 "El Bolsón",
                 "El Maiten"
@@ -442,10 +442,10 @@
         },
         {
             "id": "41",
-            "consigna":"¿Sobre que río se encuentra la represa hidroeléctrica “El Chocón”?",
-            "respuesta":"Río Limay",
-            "remate":"La represa hidroeléctrica “El Chocón” se encuentra sobre el Río Limay. Las obras del Aprovechamiento El Chocón se compone de una Central Hidroeléctrica, una Presa de material granular y núcleo impermeable, un Vertedero con 4 compuertas radicales, una Obra de Tomas y Tuberías Forzadas. La energía eléctrica es producida por seis generadores de 200.000 KW cada uno, con una capacidad máxima total de evacuación de 2.400 m3/s. La generación media anual de proyecto es de 3.350 millones de Kwh.",
-            "opciones":[
+            "question":"¿Sobre que río se encuentra la represa hidroeléctrica “El Chocón”?",
+            "correctAnswer":"Río Limay",
+            "answerTip":"La represa hidroeléctrica “El Chocón” se encuentra sobre el Río Limay. Las obras del Aprovechamiento El Chocón se compone de una Central Hidroeléctrica, una Presa de material granular y núcleo impermeable, un Vertedero con 4 compuertas radicales, una Obra de Tomas y Tuberías Forzadas. La energía eléctrica es producida por seis generadores de 200.000 KW cada uno, con una capacidad máxima total de evacuación de 2.400 m3/s. La generación media anual de proyecto es de 3.350 millones de Kwh.",
+            "options":[
                 "Río Limay",
                 "Río Negro",
                 "Río Colorado"
@@ -453,10 +453,10 @@
         },
         {
             "id": "42",
-            "consigna":"¿En cuál provincia se encuentran las ruinas de San Ignacio?",
-            "respuesta":"Misiones",
-            "remate":"Las ruinas de San Ignacio  en la provincia de Misiones, a unos 60 km de la capital provincial, Posadas.",
-            "opciones":[
+            "question":"¿En cuál provincia se encuentran las ruinas de San Ignacio?",
+            "correctAnswer":"Misiones",
+            "answerTip":"Las ruinas de San Ignacio  en la provincia de Misiones, a unos 60 km de la capital provincial, Posadas.",
+            "options":[
                 "Misiones",
                 "Corrientes",
                 "Formosa"
@@ -464,10 +464,10 @@
         },
         {
             "id": "43",
-            "consigna":"¿Cuál es el nombre del centro de esquí más conocido de la provincia de Mendoza?",
-            "respuesta":"Las Leñas",
-            "remate":"El centro de esquí más conocido de la provincia de Mendoza es “Las Leñas”. Posee el descenso ininterrumpido más largo del país, con 7050 m conectando las pistas Apolo, Neptuno y Venus.",
-            "opciones":[
+            "question":"¿Cuál es el nombre del centro de esquí más conocido de la provincia de Mendoza?",
+            "correctAnswer":"Las Leñas",
+            "answerTip":"El centro de esquí más conocido de la provincia de Mendoza es “Las Leñas”. Posee el descenso ininterrumpido más largo del país, con 7050 m conectando las pistas Apolo, Neptuno y Venus.",
+            "options":[
                 "Las Leñas",
                 "Catedral",
                 "Chapelco"
@@ -475,10 +475,10 @@
         },
         {
             "id": "44",
-            "consigna":"¿Cuál es la superficie del Glaciar Perito Moreno?",
-            "respuesta":"250 Km²",
-            "remate":"El glaciar Perito Moreno esta ubicado en el departamento Lago Argentino de la provincia de Santa Cruz. Su nombre hace honor a Francisco Moreno, director del museo de la Sociedad Científica Argentina y activo explorador de la zona austral de la Argentina.",
-            "opciones":[
+            "question":"¿Cuál es la superficie del Glaciar Perito Moreno?",
+            "correctAnswer":"250 Km²",
+            "answerTip":"El glaciar Perito Moreno esta ubicado en el departamento Lago Argentino de la provincia de Santa Cruz. Su nombre hace honor a Francisco Moreno, director del museo de la Sociedad Científica Argentina y activo explorador de la zona austral de la Argentina.",
+            "options":[
                 "450 Km²",
                 "700 Km²",
                 "250 Km²"
@@ -486,10 +486,10 @@
         },
         {
             "id": "45",
-            "consigna":"¿Qué ciudad es conocida como la “capital nacional del petróleo”?",
-            "respuesta":"Comodoro Rivadavia",
-            "remate":"La ciudad de Comodoro Rivadavia es conocida como la “capital nacional del petróleo”. Se le ha otorgado ese nombre en reconocimiento por su papel protagónico en los inicios de la generación de esa fuente de energía.",
-            "opciones":[
+            "question":"¿Qué ciudad es conocida como la “capital nacional del petróleo”?",
+            "correctAnswer":"Comodoro Rivadavia",
+            "answerTip":"La ciudad de Comodoro Rivadavia es conocida como la “capital nacional del petróleo”. Se le ha otorgado ese nombre en reconocimiento por su papel protagónico en los inicios de la generación de esa fuente de energía.",
+            "options":[
                 "Comodoro Rivadavia",
                 "Trelew",
                 "Gobernador Costa"
@@ -497,10 +497,10 @@
         },
         {
             "id": "46",
-            "consigna":"¿A orillas de que río se levanta el monumento a la bandera en la ciudad de Rosario?",
-            "respuesta":"Paraná",
-            "remate":"El Monumento Histórico Nacional a la Bandera se levanta a orillas del Río Paraná. Es una construcción simbólica en el lugar donde el general Manuel Belgrano enarboló e izó por primera vez la Bandera Argentina, el 27 de febrero de 1812.",
-            "opciones":[
+            "question":"¿A orillas de que río se levanta el monumento a la bandera en la ciudad de Rosario?",
+            "correctAnswer":"Paraná",
+            "answerTip":"El Monumento Histórico Nacional a la Bandera se levanta a orillas del Río Paraná. Es una construcción simbólica en el lugar donde el general Manuel Belgrano enarboló e izó por primera vez la Bandera Argentina, el 27 de febrero de 1812.",
+            "options":[
                 "Paraguay",
                 "Uruguay",
                 "Paraná"
@@ -508,10 +508,10 @@
         },
         {
             "id": "47",
-            "consigna":"¿Cuál es la capital de la provincia de Buenos Aires?",
-            "respuesta":"La Plata",
-            "remate":"La capital de la provincia de Buenos Aires es La Plata. Se ubica a 56 Km. al sudeste de la ciudad de Buenos Aires. Fue fundada oficialmente por el gobernador Dardo Rocha el 19 de noviembre de 1882",
-            "opciones":[
+            "question":"¿Cuál es la capital de la provincia de Buenos Aires?",
+            "correctAnswer":"La Plata",
+            "answerTip":"La capital de la provincia de Buenos Aires es La Plata. Se ubica a 56 Km. al sudeste de la ciudad de Buenos Aires. Fue fundada oficialmente por el gobernador Dardo Rocha el 19 de noviembre de 1882",
+            "options":[
                 "Buenos Aires",
                 "La Plata",
                 "Lomas de Zamora"
@@ -519,10 +519,10 @@
         },
         {
             "id": "48",
-            "consigna":"¿Cuál es el partido con mayor superficie del Gran Buenos Aires?",
-            "respuesta":"La Matanza",
-            "remate":"El partido con mayor superficie del Gran Buenos Aires es La Matanza. Cuenta con una superficie total de 325,71 Km². El distrito limita al noroeste con la Ciudad Autónoma de Buenos Aires, al sudoeste con Cañuelas y Marcos Paz, mientras que al sudeste con los partidos de Lomas de Zamora y Esteban Echeverría; y por último al noroeste con Marcos Paz, Merlo, Morón y Tres de Febrero.",
-            "opciones":[
+            "question":"¿Cuál es el partido con mayor superficie del Gran Buenos Aires?",
+            "correctAnswer":"La Matanza",
+            "answerTip":"El partido con mayor superficie del Gran Buenos Aires es La Matanza. Cuenta con una superficie total de 325,71 Km². El distrito limita al noroeste con la Ciudad Autónoma de Buenos Aires, al sudoeste con Cañuelas y Marcos Paz, mientras que al sudeste con los partidos de Lomas de Zamora y Esteban Echeverría; y por último al noroeste con Marcos Paz, Merlo, Morón y Tres de Febrero.",
+            "options":[
                 "La Matanza",
                 "Lomas de Zamora",
                 "General San Martín"
@@ -530,10 +530,10 @@
         },
         {
             "id": "49",
-            "consigna":"¿En cuál provincia se encuentra el Cerro de los Siete Colores?",
-            "respuesta":"Jujuy",
-            "remate":"El Cerro de los Siete Colores se encuentra en la provincia de Jujuy.  La localidad de Purmamarca se encuentra a sus pies y ambos forman una de las postales más reconocidas del noroeste argentino.",
-            "opciones":[
+            "question":"¿En cuál provincia se encuentra el Cerro de los Siete Colores?",
+            "correctAnswer":"Jujuy",
+            "answerTip":"El Cerro de los Siete Colores se encuentra en la provincia de Jujuy.  La localidad de Purmamarca se encuentra a sus pies y ambos forman una de las postales más reconocidas del noroeste argentino.",
+            "options":[
                 "Salta",
                 "Jujuy",
                 "La Rioja"
@@ -541,10 +541,10 @@
         },
         {
             "id": "50",
-            "consigna":"¿En cuál provincia se celebra la Fiesta Nacional de la Vendimia?",
-            "respuesta":"Mendoza",
-            "remate":"La Fiesta Nacional de la Vendimia se celebra en la provincia de Mendoza. Refleja la celebración de la uva transformada en vino a través del esfuerzo que los viñateros llevan a cabo. Su primer festejo se realizó en el año 1936.",
-            "opciones":[
+            "question":"¿En cuál provincia se celebra la Fiesta Nacional de la Vendimia?",
+            "correctAnswer":"Mendoza",
+            "answerTip":"La Fiesta Nacional de la Vendimia se celebra en la provincia de Mendoza. Refleja la celebración de la uva transformada en vino a través del esfuerzo que los viñateros llevan a cabo. Su primer festejo se realizó en el año 1936.",
+            "options":[
                 "Mendoza",
                 "La Rioja",
                 "San Juan"

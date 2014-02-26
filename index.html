@@ -1,105 +1,194 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 
-    <title>Trivia JS</title>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Rye&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="triviaIgn.css">
-    <style>
-      /*p {margin:0;}*/
-    </style>
-  </head>
+		<title>Trivia JS</title>
+		<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Rye&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="base.css">
+		<link rel="stylesheet" href="triviaIgn.css">
+		<style>
+			/*p {margin:0;}*/
+		</style>
+	</head>
 
-  <body>
-    <div id="gameSpace">
-      <img id="background" src="images/fondos/1.jpg" />
-      <div id="questionBox">
-        <p id="consigna"></p>
-        <div class="cta">
-          <div class="izq"></div>
-          <div class="centro"><p>Elige tu respuesta...</p></div>
-          <div class="der"></div>
-        </div>
-      </div>
-      <div id="questionLabel">
-        <div class="izq"></div>
-        <div class="centro"></div>
-        <div class="der"></div>
-        <div class="numcontainer" id="numeroPregunta"></div>
-      </div>
+	<body>
+		<div id="gameSpace">
+			<img id="background" src="images/fondos/1.jpg" />
+			<div id="bg"></div>
+			<div id="hiScoreBox" style="position:absolute;">
+				<span class="hiScoreLabel"></span>
+				<span id="hiScore" style="text-align:right;"></span>
+			</div>
 
-      <div class="respuesta" id="opcion1" data-index="0">
-        <div class="opciones">
-          <div class="boton"></div>
-          <p></p>
-        </div>
-      </div>
-      <div class="respuesta" id="opcion2" data-index="1">
-        <div class="opciones">
-          <div class="boton"></div>
-          <p></p>
-        </div>
-      </div>
-      <div class="respuesta" id="opcion3" data-index="2">
-        <div class="opciones">
-          <div class="boton"></div>
-          <p></p>
-        </div>
-      </div>
+			<div id="questionBox">
+				<p id="question"></p>
+				<div class="cta">
+					<div class="izq"></div>
+					<div class="centro"><p class="chooseOptionLabel"></p></div>
+					<div class="der"></div>
+				</div>
+			</div>
 
-      <div id="responseSplash">
-        <p class="calificacion"></p>
-        <p class="remate"></p>
-        <div class="roundUp" style="width:50%;margin: 30px auto;">
-          <span class="roundUpLabel" style="width:45%;inline-block;float:left;"></span>
-          <span class="roundUpScore" style="width:45%;inline-block;float:right;text-align:right;"></span>
-        </div>
-        <div class="cta" style="clear:both">
-          <div class="izq"></div>
-          <div class="centro"><p>Clicka para continuá</p></div>
-          <div class="der"></div>
-        </div>
-      </div>
+			<div id="decoTop">
+				<div class="izq"></div>
+				<div class="centro"></div>
+				<div class="der"></div>
+			</div>
 
-      <div id="startSplash">
-        <div class="title">Geo Trivia IGN</div>
-        <div class="cta" style="margin-top: 13vw;">
-          <div class="izq"></div>
-          <div class="centro"><p>Comenzar</p></div>
-          <div class="der"></div>
-        </div>
-      </div>
+			<div id="questionBadge"></div>
 
-      <div id="endSplash">
-        <div class="finalScoreLabel">Tu puntaje final es:</div>
-        <div class="finalScore"></div>
-      </div>
+			<div class="respuesta" id="option1">
+				<div class="opciones">
+					<div class="boton"></div>
+					<p></p>
+				</div>
+			</div>
+			<div class="respuesta" id="option2">
+				<div class="opciones">
+					<div class="boton"></div>
+					<p></p>
+				</div>
+			</div>
+			<div class="respuesta" id="option3">
+				<div class="opciones">
+					<div class="boton"></div>
+					<p></p>
+				</div>
+			</div>
 
-      <div id="errorSplash">
-        <h1>ERROR!</h1>
-        <p></p>
-      </div>
+			<div id="responseSplash">
+				<p class="result"></p>
+				<p class="resultTip"></p>
+				<div class="roundUp">
+					<p class="roundUpLabelHeader"></p>
+					<span class="roundUpLabelQuestion" style="text-align: left;width:45%;inline-block;float:left;"></span>
+					<span class="roundUpScoreQuestion" style="width:45%;inline-block;float:right;text-align:right;"></span>
+					<br style="clear:both" />
+					<span class="roundUpLabelTimebonus" style="text-align: left;width:45%;inline-block;float:left;"></span>
+					<span class="roundUpScoreTimebonus" style="width:45%;inline-block;float:right;text-align:right;"></span>
+					<br style="clear:both" />
+					<span class="roundUpLabelSum" style="text-align: left;width:45%;inline-block;float:left;"></span>
+					<span class="roundUpScoreSum" style="width:45%;inline-block;float:right;text-align:right;"></span>
+				</div>
+				<div class="cta nextContainer" style="clear:both">
+					<div class="izq"></div>
+					<div class="centro"><p class="nextLabel"></p></div>
+					<div class="der"></div>
+				</div>
+			</div>
 
-      
-    </div>
+			<div id="startSplash">
+				<div class="title"></div>
+				<div class="cta" style="margin-top: 13vw;">
+					<div class="izq"></div>
+					<div class="centro"><p class="startLabel"></p></div>
+					<div class="der"></div>
+				</div>
+			</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="lib/jquery-1.11.0.min.js"></script>
-    <script src="lib/jquery.ui.widget.min.js"></script>
-    <script src="lib/TweenMax-1.11.4.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed
-    <script src="lib/bootstrap.min.js"></script>
-    -->
+			<div id="endSplash">
+				<div class="finalScoreLabel"></div>
+				<div class="finalScore"></div>
+				<div id="newHiScoreBadge">
+					<div class="cta next" style="clear:both">
+						<div class="izq"></div>
+						<div class="centro"><p class="newHiScoreLabel"></p></div>
+						<div class="der"></div>
+					</div>
+				</div>
+			</div>
 
-    <script src="triviaJS.min.js"></script>
-    <script>
-    $(document).ready(function(){
-      $('body').trivia({preguntasUrl:'triviafile.json'});
-    })
-    </script>
+			<div id="decoBottom">
+				<div class="izqbtm"></div>
+				<div class="centrobtm"></div>
+				<div class="derbtm"></div>
+			</div>
 
-  </body>
+			
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="lib/jquery-1.11.0.min.js"></script>
+		<script src="lib/jquery.ui.widget.min.js"></script>
+		<script src="lib/TweenMax-1.11.4.min.js"></script>
+		<script src="lib/store+json2.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed
+		<script src="lib/bootstrap.min.js"></script>
+		-->
+
+		<script src="src/triviaJS.js"></script>
+		<script>
+		$(document).ready(function(){
+			var bg = $('#background');
+			var slideShow = new TweenMax.to({id:0,v:0},5,{
+				v:1,
+				paused: true,
+				onRepeatParams: [bg],
+				onStart: function() {
+					this.randong = ((Math.random() * 50) << 0) + 1;
+					$('<img />').attr('src','images/fondos/'+this.randong+'.jpg');
+				},
+				onRepeat:function(img){
+					var rr = this.randong;
+					TweenMax.to(img,0.5,{alpha:0,yoyo: true, repeat:1, onRepeat:function(){
+						img.attr('src','images/fondos/'+rr+'.jpg');
+					}});
+					this.randong = ((Math.random() * 50) << 0) + 1;
+					$('<img />').attr('src','images/fondos/'+this.randong+'.jpg');
+				},
+				repeat: -1
+			});
+			$('body').trivia({
+				questionsFileUrl:'triviafile.json',
+				questionsPerGame:1,
+				labels: {
+					hiScore: "Record del día: ",
+					title: "Geo Trivia IGN",
+					playerScore: "PUNTOS: ",
+					roundUpHeader: "Puntos",
+					roundUpQuestion: "Respuesta correcta:",
+					roundUpTimebonus: "Bonus por tiempo:",
+					roundUpSum: 'Total:',
+					responseOkText: "CORRECTO!",
+					responseFailText: "INCORRECTO!",
+					nextQuestion: 'Continuar',
+					chooseOption: 'Elegí tu respuesta...',
+					startGame: 'Comenzar',
+					newRecord: 'Record del Día!',
+					finalScore: 'Tu puntaje final es: '
+				},
+				'gamespaceReady': function(evt,data) {
+					data.instance.questionBox.outerWidth(data.instance.width);
+					data.instance._center(data.instance.questionBadge, null, true);
+					slideShow.resume();
+				},
+				'gameStarted': function(evt,data) {
+					slideShow.pause();
+				},
+				'gameEnded': function(evt,data) {
+					slideShow.resume();
+				},
+				'beforeShowQuestion': function(evt, data) {
+					var q = data.question;
+					TweenMax.to(bg, 0.75,{
+						yoyo: true,
+						repeat: 1,
+						repeatDelay: 0.5,
+						autoAlpha: 0,
+						onStart: function(){
+							$('<img />').attr('src','images/fondos/'+q.id + '.jpg');
+						},
+						onRepeat: function(){
+							bg.attr('src', 'images/fondos/'+q.id + '.jpg');
+						}
+					});
+				}
+			});
+		})
+		</script>
+
+	</body>
 </html>
