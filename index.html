@@ -110,16 +110,7 @@
 			
 		</div>
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="lib/jquery-1.11.0.min.js"></script>
-		<script src="lib/jquery.ui.widget.min.js"></script>
-		<script src="lib/TweenMax-1.11.4.min.js"></script>
-		<script src="lib/store+json2.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed
-		<script src="lib/bootstrap.min.js"></script>
-		-->
-
-		<script src="src/triviaJS.js"></script>
+		<script src="triviaJS.min.js"></script>
 		<script>
 		$(document).ready(function(){
 			var bg = $('#background');
@@ -143,7 +134,7 @@
 			});
 			$('body').trivia({
 				questionsFileUrl:'triviafile.json',
-				questionsPerGame:1,
+				questionsPerGame:10,
 				labels: {
 					hiScore: "Record del día: ",
 					title: "Geo Trivia IGN",
