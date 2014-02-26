@@ -223,10 +223,11 @@
 			roundUpScoreSum.text("0");
 
 			TweenMax.set(this.responseSplash,{autoAlpha:1,scale:1});
-			
+			this._trigger('beforeShowRoundSplash',null,{instance:this});
 			var hookNextQuestion = function() {
 				_this.responseSplash.on('click',function(){
 					_this.responseSplash.off('click');
+					_this._trigger('afterShowRoundSplash',null,{instance:this});
 					TweenMax.to(_this.responseSplash,0.5,{
 						autoAlpha:0,
 						scale:0.1,
