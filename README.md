@@ -1,6 +1,9 @@
 trivia-javascript
 =================
 
-Juego de trivia en javascript
+Mini trivia engine written as a jquery widget.
 
-Usa bootstrap 3.1.0
+Provides basic functionality with a simple JSON file with questions.
+
+Docs soon.
+
