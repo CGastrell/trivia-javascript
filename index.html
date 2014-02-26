@@ -122,6 +122,25 @@
 		<script src="src/triviaJS.js"></script>
 		<script>
 		$(document).ready(function(){
+			var bg = $('#background');
+			var slideShow = new TweenMax.to({id:0,v:0},5,{
+				v:1,
+				paused: true,
+				onRepeatParams: [bg],
+				onStart: function() {
+					this.randong = ((Math.random() * 50) << 0) + 1;
+					$('<img />').attr('src','images/fondos/'+this.randong+'.jpg');
+				},
+				onRepeat:function(img){
+					var rr = this.randong;
+					TweenMax.to(img,0.5,{alpha:0,yoyo: true, repeat:1, onRepeat:function(){
+						img.attr('src','images/fondos/'+rr+'.jpg');
+					}});
+					this.randong = ((Math.random() * 50) << 0) + 1;
+					$('<img />').attr('src','images/fondos/'+this.randong+'.jpg');
+				},
+				repeat: -1
+			});
 			$('body').trivia({
 				questionsFileUrl:'triviafile.json',
 				questionsPerGame:1,
@@ -141,9 +160,31 @@
 					newRecord: 'Record del Día!',
 					finalScore: 'Tu puntaje final es: '
 				},
-				'gameSpaceReady': function(evt,data) {
+				'gamespaceReady': function(evt,data) {
 					data.instance.questionBox.outerWidth(data.instance.width);
 					data.instance._center(data.instance.questionBadge, null, true);
+					slideShow.resume();
+				},
+				'gameStarted': function(evt,data) {
+					slideShow.pause();
+				},
+				'gameEnded': function(evt,data) {
+					slideShow.resume();
+				},
+				'beforeShowQuestion': function(evt, data) {
+					var q = data.question;
+					TweenMax.to(bg, 0.75,{
+						yoyo: true,
+						repeat: 1,
+						repeatDelay: 0.5,
+						autoAlpha: 0,
+						onStart: function(){
+							$('<img />').attr('src','images/fondos/'+q.id + '.jpg');
+						},
+						onRepeat: function(){
+							bg.attr('src', 'images/fondos/'+q.id + '.jpg');
+						}
+					});
 				}
 			});
 		})

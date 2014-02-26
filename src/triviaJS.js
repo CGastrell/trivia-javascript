@@ -16,7 +16,6 @@
 			questionsPerGame: 10,
 			questionsArrayName: 'questions',
 			questionsFileUrl: "",
-			slideShowInterval: 5,
 			labels: {
 				hiScore: "Hi Score: ",
 				title: "Trivia JS",
@@ -46,7 +45,6 @@
 				this.options.hiScore = store.get('hiScore') ? store.get('hiScore') : this.options.hiScore;
 			}
 			this._setUpGameSpace();
-			this._setupSlideshow();
 			var _this = this;
 			$.when(
 				this._loadQuestions()
@@ -75,7 +73,6 @@
 			return d.done(callback);
 		},
 		startGame: function() {
-			this.slideShow.pause();
 			this.roundQuestions = [];
 			this.preguntaActual = null;
 			this.roundPoints = 0;
@@ -86,6 +83,7 @@
 				r = Math.random() * q.length << 0;
 				this.roundQuestions.push(q.splice(r,1)[0]);
 			}
+			this._trigger('gameStarted',null,{questions:this.roundQuestions,instance:this});
 			TweenMax.to(this.startSplash,0.5,{
 				autoAlpha:0,
 				scale:0.1,
@@ -104,6 +102,7 @@
 					_this._showStartSplash();
 				})
 			}});
+			this._trigger('gameEnded',null,{score:this.roundPoints,instance:this});
 			tl.add(
 				TweenMax.to(this.endSplash,0.25,{autoAlpha:1})
 			);
@@ -180,17 +179,17 @@
 
 			var tl = new TimelineMax({onComplete:hookRespuestas});
 			tl.add(TweenMax.from(this.questionBadge, 1, {delay: 0.25, autoAlpha: 0, scale:3, ease: Power4.easeIn}));
-			tl.add(TweenMax.to(this.background,0.5,{
-				yoyo:true,
-				repeat:1,
-				autoAlpha:0,
-				onStart: function(){
-					$('<img />').attr('src','images/fondos/'+_this.preguntaActual.id + '.jpg');
-				},
-				onRepeat: function(){
-					_this.background.attr('src', 'images/fondos/'+_this.preguntaActual.id + '.jpg');
-				}
-			}));
+			// tl.add(TweenMax.to(this.background,0.5,{
+			// 	yoyo:true,
+			// 	repeat:1,
+			// 	autoAlpha:0,
+			// 	onStart: function(){
+			// 		$('<img />').attr('src','images/fondos/'+_this.preguntaActual.id + '.jpg');
+			// 	},
+			// 	onRepeat: function(){
+			// 		_this.background.attr('src', 'images/fondos/'+_this.preguntaActual.id + '.jpg');
+			// 	}
+			// }));
 			tl.add(TweenMax.to(this.questionBox,0.75,{delay: 0, autoAlpha:1}));
 			tl.add(
 				TweenMax.staggerFrom(
@@ -313,7 +312,16 @@
 
 			this.roundPoints += timePoints;
 			this.roundPoints += questionPoints;
-
+			this._trigger('answered',null,{
+				correct:correcto,
+				answer:answer,
+				question:this.preguntaActual,
+				score:{
+					question: questionPoints,
+					timebonus: timePoints,
+					subtotal: this.roundPoints
+				}
+			});
 			this._showRoundUpSplash(questionPoints,timePoints);
 		},
 		_shuffleArray: function(o){ 
@@ -321,7 +329,6 @@
 			return o;
 		},
 		_showStartSplash: function() {
-			this.slideShow.resume();
 			var _this = this;
 			TweenMax.staggerTo(
 				[
@@ -341,32 +348,6 @@
 					}
 				}
 			);
-		},
-		_setupSlideshow: function() {
-			if(this.options.slideShowInterval < 1) {
-				this.slideShow = {
-					resume: function(){},
-					pause: function(){}
-				}
-				return;
-			}
-			this.slideShow = new TweenMax.to({id:0,v:0},this.options.slideShowInterval,{
-				v:1,
-				onRepeatParams: [this.background],
-				onStart: function() {
-					this.randong = ((Math.random() * 50) << 0) + 1;
-					$('<img />').attr('src','images/fondos/'+this.randong+'.jpg');
-				},
-				onRepeat:function(img){
-					var rr = this.randong;
-					TweenMax.to(img,0.5,{alpha:0,yoyo: true, repeat:1, onRepeat:function(){
-						img.attr('src','images/fondos/'+rr+'.jpg');
-					}});
-					this.randong = ((Math.random() * 50) << 0) + 1;
-					$('<img />').attr('src','images/fondos/'+this.randong+'.jpg');
-				},
-				repeat: -1
-			});
 		},
 		_setUpGameSpace: function() {
 			if(!this.options.useTemplate) {
@@ -416,7 +397,7 @@
 				this.responseSplash
 			],{autoAlpha:0});
 
-			this._trigger('gameSpaceReady', null, {instance:this});
+			this._trigger('gamespaceReady', null, {instance:this});
 
 			this.startSplash.click(function(){
 				_this.startGame();
@@ -482,7 +463,7 @@
 				.append($('<div id="newHiScoreBadge" />').append('<p class="newHiScoreLabel" />'))
 				.appendTo(this.gameSpace);
 
-			this._trigger('gamespace_built', null, this);
+			this._trigger('gamespaceBuilt', null, this);
 		},
 		_triggerError: function(msg) {
 			var err = {

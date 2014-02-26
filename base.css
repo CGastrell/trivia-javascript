@@ -84,6 +84,7 @@ user-select: none;
 #responseSplash > p.resultTip {
   font-size: 1.5vw;
   line-height: 1.8vw;
+  margin: 0 10%;
 }
 
 #questionBox > #question {
