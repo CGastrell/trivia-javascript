@@ -111,6 +111,7 @@
 
 		<script src="triviaJS.min.js"></script>
 		<script>
+		document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
 		$(document).ready(function(){
 			var bg = $('#background');
 			var slideShow = new TweenMax.to({id:0,v:0},5,{
